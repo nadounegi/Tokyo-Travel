@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+/*--------------
+共通設定 
+--------------*/
+ul{
+    list-style: none;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+p a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+/*--------------
+ヘッダー
+--------------*/
+header{
+    background-color:#ccc;
+    display: flex;/* 横並び */
+    justify-content: space-between;/* flexの左右の配置方法 */
+    align-items: center;/* flexの上下の配置位置 */
+    padding-right: 50px;
+}
+.Header_flex{
+    display: flex;
+}
+.Header_decoresion{
+    margin-right: 10px;/*要素を右寄せ*/
+}
+header img{
+    height: 45px;
+    margin-left: 20px;
+}
+
+/*メイン*/
+main h1{
+    padding: 10px;
+    margin: 50px auto 50px;
+    display: flex;
+    justify-content: center;
+    background-color: #ccc;
+    text-wrap: nowrap;
+    width: 22%;
+    border-radius: 40px 40px;
+}
+/*タクシー画像*/
+.Taxi_image{
+    width: 300px;
+    border-radius: 20px;
+    padding: 30px 45px;
+    text-decoration: none;
+}
+.Yoyaku_haiti{/*画像配置*/
+    padding: 30px;
+    text-align: center; 
+}
+/*フッター*/
+footer{
+    background-color:#ccc;
+    display: flex;/* 横並び */
+    justify-content: space-between;/* flexの左右の配置方法 */
+    align-items: center;/* flexの上下の配置位置 */
+    padding-right: 50px;
+    margin-top: 1%;
+
+}
+footer a{
+text-decoration: none;
+color: #000000;
+}
+
+.footer_flex{
+    display: flex;
+}
+.footer_decoresion{
+    margin-right: 10px;/*要素を右寄せ*/
+}
+footer img{
+    height: 45px;
+    margin-left: 20px;
+}

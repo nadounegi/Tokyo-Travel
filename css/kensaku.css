@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+/*--------------
+共通設定 
+--------------*/
+ul{
+    list-style: none;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+li a{
+    text-decoration: none;
+}
+
+/*--------------
+ヘッダー
+--------------*/
+header{
+    background-color: grey;
+    display: flex;/* 横並び */
+    justify-content: space-between;/* flexの左右の配置方法 */
+    align-items: center;/* flexの上下の配置位置 */
+}
+
+/*--------------
+メイン
+--------------*/
+
+main{
+    text-align: center;
+}
+
+.Main_box{
+    margin-top: 50px;
+}
+
+main h1{
+    background-color: gray;
+    margin: 2em;
+    border: solid 1px #000000;
+    background-color: #ccc;
+    padding: 10px 10px; 
+    text-wrap: nowrap;
+}
+
+main img{
+    margin-bottom: 100px;
+}
+
+/*--------------
+フッター
+--------------*/
+footer{
+    background-color: grey;
+}
+footer a{
+text-decoration: none;
+color: #000000;
+}
+
+#logo{
+    text-align: center;
+}

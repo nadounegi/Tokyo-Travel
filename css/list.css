@@ -1,0 +1,212 @@
+  @charset "utf-8";
+
+  /*--------------
+  ヘッダー
+  --------------*/
+  header{
+      background-color:#ccc;
+      display: flex;/* 横並び */
+      justify-content: space-between;/* flexの左右の配置方法 */
+      align-items: center;/* flexの上下の配置位置 */
+      padding-right: 50px;
+  }
+
+  header img{
+      height: 45px;
+      margin-left: 20px;
+  }
+
+  header a{
+      text-decoration: none;
+      font-weight: bold;
+      color: #000000;
+  }
+  /*--------------
+  ナビゲーション
+  --------------*/
+  .Nav_list {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      background-color: aqua;
+      background-image: url(../img/5.jpg);
+      background-size: cover;
+      height: 400px;
+  }
+
+  .Nav_list li {
+      text-align: center;
+  }
+
+  .H_otoi {
+      margin-right: 50px;
+  }
+
+  .item {
+      width: auto;
+      margin: 2em;
+      border: solid 1px #000000;
+      background-color: #ccc;
+      padding: 10px 100px 10px;
+      text-wrap: nowrap;
+
+  }
+
+  ul {
+      margin-top: 70px;
+  }
+
+
+/*--------------
+メイン
+--------------*/
+
+.yoyaku {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  background-color: gainsboro;
+  padding: 30px 30px;
+  width: 305px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 50px;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.osusume {
+  text-align: center;
+  margin: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.koumoku {
+  display: flex;
+  justify-content: center;
+}
+
+.basyo,
+.anime,
+.insyoku {
+  border: 1px solid #000;
+  padding: 20px;
+  margin: 10px;
+  background-color: gainsboro;
+}
+
+.basyo a,
+.anime a,
+.insyoku a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #8c8181;
+  font-weight: bold;
+  position: relative;
+  top: 14px;
+}
+
+ul {
+  list-style: none;
+  word-wrap: normal;
+}
+
+ul li {
+  text-shadow: 2px 2px 2px #a6bea6cd;
+  text-align: left;
+}
+
+.basyo,
+.anime,
+.insyoku p {
+  text-align: center;
+}
+
+.komi {
+  margin: 10px;
+  width: 120px;
+  height: 53px;
+  background-color: #f1eded;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: solid 1px #6e6a6a;
+}
+
+/* 写真を丸角 */
+
+.insyoku img {
+  margin-top: 67px;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%; 
+}
+
+.anime img {
+  margin-top: 69px;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+}
+
+.basyo img {
+  margin-top: 67px;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+}
+
+#osusu_img {
+  width: 230px;
+  margin: auto;
+}
+
+#home_img {
+  width: 220px;
+  position: relative;
+  margin: auto;
+  top: 35px;
+}
+.step_area {
+  width: 230px;
+  margin: 20px auto 0 auto;
+}
+
+/*フッター*/
+footer{
+    background-color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 50px;
+    margin-top: 115px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+  }
+footer a{
+text-decoration: none;
+color: #000000;
+}
+.footer_flex{
+    display: flex;
+}
+
+.footer_decoresion{
+    margin-right: 10px;/*要素を右寄せ*/
+}
+
+footer img{
+    height: 45px;
+    margin-left: 20px;
+}
+
+#jyoho_add{
+  position: relative;
+  left: 409px;
+  color: black;
+  text-decoration: none;
+}

@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+/*--------------
+共通設定 
+--------------*/
+ul{
+    list-style: none;
+    text-decoration: none;
+    list-style-type: none;
+}
+li a{
+    text-decoration: none;
+}
+
+@charset "utf-8";
+
+/*--------------
+ヘッダー
+--------------*/
+header{
+    background-color:#ccc;
+    display: flex;/* 横並び */
+    justify-content: space-between;/* flexの左右の配置方法 */
+    align-items: center;/* flexの上下の配置位置 */
+    padding-right: 50px;
+}
+
+header img{
+    height: 45px;
+    margin-left: 20px;
+}
+
+header a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #000000;
+}
+/*--------------
+ナビゲーション
+--------------*/
+.Nav_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: aqua;
+    background-image: url(../img/5.jpg);
+    background-size: cover;
+    height: 400px;
+}
+
+.Nav_list li {
+    text-align: center;
+}
+
+.H_otoi {
+    margin-right: 50px;
+}
+
+.item {
+    width: auto;
+    margin: 2em;
+    border: solid 1px #000000;
+    background-color: #ccc;
+    padding: 10px 100px 10px;
+    text-wrap: nowrap;
+
+}
+
+ul {
+    margin-top: 70px;
+}
+
+
+/*メイン*/
+
+main h1{
+    padding: 10px;
+    margin: 50px auto 50px;
+    display: flex;
+    justify-content: center;
+    background-color: #ccc;
+    text-wrap: nowrap;
+    width: 50%;
+}
+#email,#message{
+    border: 1px solid #000000;
+}
+.Image_center{
+text-align: center;
+
+}
+
+/* フォーム */
+form{
+    text-align: center;
+}
+textarea{
+    width: 500px;
+    height: 200px;
+}
+
+#naiyo{
+    position: relative;
+    top: -182px;
+    left: 2px;
+}
+.Yoyaku_haiti{
+	text-align:center;
+}
+/*フッター*/
+footer{
+    background-color:#ccc;
+    display: flex;/* 横並び */
+    justify-content: space-between;/* flexの左右の配置方法 */
+    align-items: center;/* flexの上下の配置位置 */
+    padding-right: 50px;
+    text-decoration: none;
+}
+
+.footer_flex{
+    display: flex;
+}
+footer img{
+    height: 45px;
+    margin-left: 20px;
+}

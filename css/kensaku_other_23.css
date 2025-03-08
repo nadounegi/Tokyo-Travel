@@ -1,0 +1,130 @@
+@charset "utf-8";
+
+/*--------------
+ヘッダー
+--------------*/
+header{
+    background-color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 50px;
+}
+
+header img{
+    height: 45px;
+    margin-left: 20px;
+}
+
+header a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #000000;
+}
+
+/*--------------
+ナビゲーション
+--------------*/
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: aqua;
+    background-image: url("../img/rf10161070462_o.jpg");
+    background-size: cover;
+    height: 400px;
+}
+
+
+nav p {
+    padding: 20px;
+    margin: auto 35px auto;
+    display: flex;
+    justify-content: center;
+    background-color: #ccc;
+    text-wrap: nowrap;
+    width: 30%;
+    align-items: center;
+    font-size: larger;
+    opacity: 0.8;
+}
+.Nav_list li {
+    text-align: center;
+}
+
+.H_otoi {
+    margin-right: 50px;
+}
+
+.item {
+    width: auto;
+    margin: 2em;
+    border: solid 1px #000000;
+    background-color: #ccc;
+    padding: 10px 100px 10px;
+    text-wrap: nowrap;
+
+}
+
+ul {
+    margin-top: 70px;
+}
+
+/*-------------
+メイン
+--------------*/
+
+main p {
+    text-align: center;
+    margin: 2em;
+}
+
+
+.Si_name {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+#M_annai {
+    align-items: center;
+    padding: 20px;
+    margin: auto 35px auto;
+    display: flex;
+    justify-content: center;
+    border: solid 1px;
+    text-wrap: nowrap;
+    width: 30%;
+    margin-left: 35%;
+    margin-bottom: 2em;
+}
+
+/*--------------
+フッター
+--------------*/
+/*�t�b�^�[*/
+footer{
+    background-color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 50px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10%;
+}
+footer a{
+text-decoration: none;
+color: #000000;
+
+}
+
+.footer_flex{
+    display: flex;
+}
+.footer_decoresion{
+    margin-right: 10px;/*要素を右寄せ*/
+}
+footer img{
+    height: 45px;
+    margin-left: 20px;
+}

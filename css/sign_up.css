@@ -1,0 +1,164 @@
+header {
+  display: flex;
+  width: 1920px;
+  height: 145px;
+  background-color: rgba(61, 55, 55, 0.18);
+  align-items: center;
+  /* 垂直居中对齐 */
+
+  color: rgb(0, 0, 0);
+  /* 设置文本颜色 */
+
+}
+
+
+.Trave {
+  margin-left: 28px;
+  margin-top: -4px;
+  /* 添加单位，例如 px */
+  align-items: center;
+  /* 垂直居中对齐 */
+  font-size: 50px;
+
+}
+
+.caidan {
+  margin-top: 67px;
+  margin-left: 425px;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  /* 使用 Flexbox 布局 */
+  font-size: 24px;
+}
+
+body {
+  background-image: url();
+}
+
+.caidan li {
+  margin-right: 46px;
+  /* 设置右侧间隔为 46px */
+}
+
+.caidan li:last-child {
+  margin-right: 0;
+  /* 最后一个列表项不设置右侧间隔 */
+}
+
+.caidan a {
+  text-decoration: none;
+  /* color: #333; 链接颜色 */
+  /* font-weight: bold; 字体加粗 */
+}
+
+.anniu {
+  width: 771px;
+  height: 190px;
+  border-radius: 100px;
+  background-color: rgba(61, 55, 55, 0.18);
+  margin: 195px auto 0;
+  /* 上方边框间隔为 340px，左右自动居中 */
+  text-align: center;
+  /* 文本居中 */
+  padding: 1px;
+
+  font-size: 60px;
+}
+
+.delu {
+
+  width: 1100px;
+  height: 625px;
+  margin: 138px auto 0;
+
+  background-color: rgba(220, 219, 219, 0.10);
+  border: 1px solid #707070;
+}
+
+.register p {
+  padding: 62px 144px 5px 100px;
+  text-align: center;
+  font-size: 38px;
+  color: #707070;
+}
+
+#toroku {
+  margin-left: 877px;
+  margin-top: 20px;
+
+}
+
+#Mail {
+  background-color: rgb(210, 197, 155, 24%);
+  width: 757px;
+  height: 86px;
+}
+
+#Send {
+  border-radius: 100px;
+  width: 200px;
+  height: 86px;
+  font-size: 39px;
+  color: #707070;
+}
+
+#Password {
+  width: 597px;
+  height: 95px;
+  background-color: rgb(210, 197, 155, 24%);
+
+}
+
+.motoru {
+  display: flex;
+  justify-content: center;
+  /* 水平居中 */
+  margin: 75px auto 63px;
+}
+
+.motoru p+p {
+  margin-left: 196px;
+  /* 两个 p 元素之间的间隔为 196px */
+}
+
+.motoru img {
+
+  width: 500px;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  font-size: 38px;
+}
+
+footer {
+  display: flex;
+  width: auto;
+  height: 145px;
+  background-color: rgba(61, 55, 55, 0.18);
+  align-items: center;
+  /* 垂直居中对齐 */
+
+  justify-content: space-between;
+  /* 左右两侧分布 */
+  font-size: 50px;
+  color: rgb(0, 0, 0);
+  /* 设置文本颜色 */
+
+}
+footer a{
+text-decoration: none;
+color: #000000;
+}
+
+footer .left {
+  padding-left: 20%;
+}
+
+footer .right {
+  padding-right: 20%;
+}
