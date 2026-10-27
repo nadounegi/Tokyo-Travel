@@ -1,0 +1,128 @@
+  /*--------------
+  ヘッダー
+  --------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  
+ 
+
+
+  body{
+    min-height: 700px;
+  }
+  header{
+    background-color:#ccc;
+    display: flex;/* 横並び */
+    justify-content: space-between;/* flexの左右の配置方法 */
+    align-items: center;/* flexの上下の配置位置 */
+    padding-right: 50px;
+}
+
+header img{
+    height: 45px;
+    margin-left: 20px;
+}
+
+header a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #000000;
+}
+/* メイン */
+.name {
+    display: table; /* 使div像表格一样根据内容调整大小 */
+    margin: 50px auto; /* 上下保持原有间距，左右自动（居中div） */
+    padding: 10px; /* 根据需要调整内边距 */
+    background-color: #ccc; /* 你的背景颜色 */
+    border-radius: 40px; /* 圆角 */
+}
+
+.name h2 {
+    margin: 0; /* 移除h2的默认外边距 */
+    text-align: center; /* 文本居中 */
+}
+
+p{
+    margin-top: 10px;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.map{
+    width: 500px;
+}
+
+.name, .image, .map, .syokai {
+    margin-bottom: 20px;
+}
+iframe {
+    width: 444px;
+    height: 200px;
+}
+@media (max-width: 768px) {
+    .content-container {
+        width: 90%; /* 调整为响应式宽度 */
+    }
+    
+        
+}
+/*フッター*/
+footer{
+    z-index: 1;
+    position: relative;
+    bottom: 2px;   
+     background-color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 50px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 8%;
+  }
+footer a{
+text-decoration: none;
+color: #000000;
+}
+.footer_flex{
+    display: flex;
+}
+
+.footer_decoresion{
+    margin-right: 10px;/*要素を右寄せ*/
+}
+
+footer img{
+    height: 45px;
+    margin-left: 20px;
+}
+
+.Yoyaku_haiti{
+    position: relative;
+    margin-top: 8%;
+    margin-left: 380px;
+    bottom: 44px;
+}
+
+
+
+#home {
+    margin-left: 197px;
+}
+
+#jyoho_add{
+  position: relative;
+  left: 509px;
+  color: black;
+  text-decoration: none;
+}

@@ -1,0 +1,143 @@
+@charset "utf-8";
+
+/*--------------
+共通設定 
+--------------*/
+
+
+ul{
+    list-style: none;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+li a{
+    text-decoration: none;
+}
+
+/*--------------
+ヘッダー
+--------------*/
+header{
+    background-color:#ccc;
+    display: flex;/* 横並び */
+    justify-content: space-between;/* flexの左右の配置方法 */
+    align-items: center;/* flexの上下の配置位置 */
+    padding-right: 50px;
+}
+
+header img{
+    height: 45px;
+    margin-left: 20px;
+}
+
+header a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #000000;
+}
+/*--------------
+ナビゲーション
+--------------*/
+.Nav_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: aqua;
+    background-image: url(../img/5.jpg);
+    background-size: cover;
+    height: 400px;
+}
+
+.Nav_list li {
+    text-align: center;
+}
+
+.H_otoi {
+    margin-right: 50px;
+}
+
+.item {
+    width: auto;
+    margin: 2em;
+    border: solid 1px #000000;
+    background-color: #ccc;
+    padding: 10px 100px 10px;
+    text-wrap: nowrap;
+
+}
+
+main{
+    margin-bottom: 200px;
+}
+
+ul {
+    margin-top: 70px;
+}
+
+
+.Mainimage_text{
+    padding: 20px;
+    margin: auto 35px auto;
+    display: flex;
+    justify-content: center;
+    border:  1px ;
+    background-color: #ccc;
+    width: 30%;
+    font-size: larger;
+    opacity: 0.8;
+    
+}
+
+
+.Tokyo_seibutoubu img{
+    margin-top: 2%;
+    width: 25%;
+}
+
+.Padding_bottom{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.Tokyo_seibutoubu{
+    text-align: center;
+    padding-top: 20px;
+    position: relative;
+    top: 151px;
+}
+.Font_bold{
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    top: 164px;
+
+}
+.Contents_center{
+    text-align: center;
+}
+/*フッター*/
+footer{
+    background-color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 29%;
+    align-items: center;
+    padding-right: 50px;
+}
+footer a{
+text-decoration: none;
+color: #000000;
+}
+
+.footer_flex{
+    display: flex;
+}
+.footer_decoresion{
+    margin-right: 10px;/*要素を右寄せ*/
+}
+footer img{
+    height: 45px;
+    margin-left: 20px;
+}
