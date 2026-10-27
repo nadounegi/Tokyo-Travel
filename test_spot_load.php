@@ -110,6 +110,8 @@ try{
       <div class="list">
         <ul class="Osusume_list">
         <?php foreach ($results as $row): ?>
+=======
+          <?php foreach ($results as $row): ?>
           <?php
                $load_id = htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8'); 
                $load_name = htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8');
@@ -135,7 +137,10 @@ try{
               <?php echo nl2br($load_syoka); ?>
             </p>
           </li>
+
         <?php endforeach; ?>
+=======
+<?php endforeach; ?>
   </ul>
 </div>
 <?php endif; ?>
