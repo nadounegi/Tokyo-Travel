@@ -195,8 +195,10 @@ main {
 .Yoyaku_haiti {
     display: flex;
     justify-content: center;
+    gap: 30px;
     margin-top: 50px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
 }
 
 .btn {
@@ -206,6 +208,7 @@ main {
     color: #ff7e67;
     border: 2px solid #ff7e67;
     padding: 15px 40px;
+    margin-right: 0px;
     border-radius: 50px;
     font-weight: bold;
     font-size: 16px;
