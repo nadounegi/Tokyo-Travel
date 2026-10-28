@@ -1,24 +1,21 @@
-
 <?php
-
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 ?>
 
 <?php
-
-//データベース接続情報を格納
+// データベース接続情報を格納
 include("config.php");
 
 $txt_email = "";
 $txt_pass = "";
 
-// 在 PHP 代码中设置一个变量来保存消息
+// メッセージを保存する変数を初期化
 $alert_message = "";
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-    //POSTデータの取得
+    // POSTデータの取得
     $txt_email = $_POST['txt_email'];
     $txt_pass = $_POST['txt_pass'];
 
@@ -56,7 +53,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 header("Location:top.php");
                 exit;
             }else{
-                $alert_message = "ログイン認証に失敗しました";            } 
+                $alert_message = "ログイン認証に失敗しました";            
+            } 
         }catch (PDOException $e){
             $alert_message = $e->getMessage();
             die();
@@ -67,6 +65,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -75,7 +74,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/login.css">
     <title>Document</title>
 </head>
 
@@ -122,7 +121,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     </main>
     <footer>
         <p><a href="index.html"><img src="img/logo.png" alt="東京 Travel" /></a></p>
-        <p class="font"><a href="Otoiawase.html">お問い合わせ</a></p>
     </footer>
 </body>
 <div class="gtranslate_wrapper"></div>

@@ -1,84 +1,225 @@
 @charset "utf-8";
 
-/*--------------
-共通設定 
---------------*/
-ul{
-    list-style: none;
-    text-decoration: none;
-    list-style-type: none;
+/* =========================================
+   全局基础
+   ========================================= */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-p a{
-    color: black;
+a {
+    text-decoration: none;
+}
+
+/* =========================================
+   头部导航 (彻底修复)
+   ========================================= */
+header {
+    background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5vw;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+header img {
+    height: 45px;
+    max-width: 100%;
+}
+
+/* 👇 去掉了那该死的 268px 和 154px */
+.nav-links {
+    display: flex;
+    gap: 3vw;
+    align-items: center;
+}
+
+.nav-links a {
     font-weight: bold;
-    text-decoration: none;
-}
-/*--------------
-ヘッダー
---------------*/
-header{
-    background-color:#ccc;
-    display: flex;/* 横並び */
-    justify-content: space-between;/* flexの左右の配置方法 */
-    align-items: center;/* flexの上下の配置位置 */
-    padding-right: 50px;
-}
-.Header_flex{
-    display: flex;
-}
-.Header_decoresion{
-    margin-right: 10px;/*要素を右寄せ*/
-}
-header img{
-    height: 45px;
-    margin-left: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    transition: color 0.3s;
+    font-size: clamp(12px, 1.5vw, 16px);
+    white-space: nowrap;
 }
 
-/*メイン*/
-main h1{
-    padding: 10px;
-    margin: 50px auto 50px;
-    display: flex;
-    justify-content: center;
-    background-color: #ccc;
-    text-wrap: nowrap;
-    width: 22%;
-    border-radius: 40px 40px;
-}
-/*タクシー画像*/
-.Taxi_image{
-    width: 300px;
-    border-radius: 20px;
-    padding: 30px 45px;
-    text-decoration: none;
-}
-.Yoyaku_haiti{/*画像配置*/
-    padding: 30px;
-    text-align: center; 
-}
-/*フッター*/
-footer{
-    background-color:#ccc;
-    display: flex;/* 横並び */
-    justify-content: space-between;/* flexの左右の配置方法 */
-    align-items: center;/* flexの上下の配置位置 */
-    padding-right: 50px;
-    margin-top: 1%;
-
-}
-footer a{
-text-decoration: none;
-color: #000000;
+.nav-links a:hover {
+    color: #ffdf00;
 }
 
-.footer_flex{
+/* =========================================
+   主内容区
+   ========================================= */
+main {
+    flex-grow: 1;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 5vw 20px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
 }
-.footer_decoresion{
-    margin-right: 10px;/*要素を右寄せ*/
+
+/* 标题美化 */
+.page-title {
+    background-color: #fff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: clamp(20px, 2.5vw, 28px);
+    color: #2c3e50;
+    border-bottom: 4px solid #ff7e67;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+    width: fit-content;
 }
-footer img{
-    height: 45px;
-    margin-left: 20px;
+
+/* =========================================
+   服务卡片
+   ========================================= */
+.service-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(116, 235, 213, 0.2);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.service-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    display: block;
+}
+
+.service-text {
+    text-align: left;
+    width: 100%;
+}
+
+.service-text p {
+    font-size: 16px;
+    line-height: 2;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.service-text .note {
+    font-size: 14px;
+    color: #777;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-left: 4px solid #74ebd5;
+    border-radius: 4px;
+}
+
+/* =========================================
+   底部按钮
+   ========================================= */
+.bottom-button {
+    text-align: center;
+}
+
+.bottom-button img {
+    height: 70px;
+    width: auto;
+    transition: transform 0.3s;
+}
+
+.bottom-button img:hover {
+    transform: scale(1.05);
+}
+
+/* =========================================
+   页脚
+   ========================================= */
+footer {
+    background-color: #6a89cc;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+footer a {
+    color: #e0e0e0;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ffdf00;
+}
+
+footer img {
+    height: 35px;
+    filter: brightness(0) invert(1);
+}
+
+/* =========================================
+   👇 手机端专属优化 (屏幕小于 600px 时生效)
+   ========================================= */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column; /* 手机上头部改成上下两行 */
+        padding: 15px 10px;
+        gap: 10px;
+    }
+
+    /* 导航栏水平居中，绝不换行 */
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    main {
+        padding: 20px 10px;
+    }
+
+    .page-title {
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+
+    .service-container {
+        padding: 20px;
+    }
+
+    .service-image img {
+        max-width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 20px;
+    }
 }

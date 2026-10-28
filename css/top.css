@@ -3,10 +3,46 @@
 /*--------------
 共通設定 
 --------------*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* 背景改成温暖、明亮的米黄色，不再是冷冰冰的白底 */
+    background-color: #fdfbf7; 
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+/* =========================================
+   调整谷歌翻译按钮的高度和位置 (强行覆盖)
+   ========================================= */
+
+/* 使用 ID 选择器 + !important 才能打败 HTML 里的行内样式 */
+#gt_float_wrapper {
+    bottom: 90px !important; /* 👈 在这里调整高度，数字越大越往上 */
+    left: 20px !important;
+    z-index: 999999 !important;
+}
+
+/* 里面的按钮样式（可选美化） */
+.gtranslate_wrapper .gt_float_switcher {
+    background-color: #fff !important;
+    border-radius: 50px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
+    padding: 10px 15px !important; 
+}
+
+/* 按钮里的文字 */
+.gtranslate_wrapper .gt_float_switcher .gt_selected a {
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: #333 !important;
+}
+
 ul {
     list-style: none;
-    text-decoration: none;
-    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 li a {
@@ -14,133 +50,242 @@ li a {
 }
 
 /*--------------
-ヘッダー
+ヘッダー (导航栏)
 --------------*/
-
-/*--------------
-ヘッダー
---------------*/
-header{
-    background-color:#ccc;
-    display: flex;/* 横並び */
-    justify-content: space-between;/* flexの左右の配置方法 */
-    align-items: center;/* flexの上下の配置位置 */
-    padding-right: 50px;
+header {
+    background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5vw; /* 随屏幕缩放 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-header img{
+header img {
     height: 45px;
-    margin-left: 20px;
+    max-width: 100%;
 }
 
-header a{
-    text-decoration: none;
+.nav-links {
+    display: flex;
+    gap: 3vw; /* 👈 彻底告别 154px 的死亡间距 */
+}
+
+.nav-links a {
     font-weight: bold;
-    color: #000000;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    transition: color 0.3s;
+    font-size: clamp(12px, 1.5vw, 16px);
+    white-space: nowrap; /* 强制文字不换行 */
+}
+
+.nav-links a:hover {
+    color: #ffdf00;
 }
 /*--------------
-ナビゲーション
+ナビゲーション (大图背景和搜索框)
 --------------*/
 .Nav_list {
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    background-color: aqua;
-    background-image: url(../img/5.jpg);
+    /* 保留你的背景图，但加一层微微的暖色调遮罩，让画面更亮 */
+    background-image: linear-gradient(rgba(255, 140, 0, 0.2), rgba(255, 105, 180, 0.1)), url(../img/5.jpg); 
+    background-position: center;
     background-size: cover;
-    height: 400px;
+    height: 480px; 
+    margin-bottom: 60px;
 }
 
-.Nav_list li {
-    text-align: center;
+#search {
+    display: flex;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 8px 8px 8px 25px; 
+    border-radius: 50px;
+    /* 给搜索框加一个粉红色的发光阴影，变得超级可爱 */
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3); 
+    width: 100%;
+    max-width: 650px;
 }
 
-.H_otoi {
-    margin-right: 50px;
+input[type="text"] {
+    flex-grow: 1; 
+    border: none; 
+    background: transparent; 
+    font-size: 16px;
+    outline: none; 
+    height: 50px;
+    color: #333;
 }
 
-.item {
-    width: auto;
-    margin: 2em;
-    border: solid 1px #000000;
-    background-color: #ccc;
-    padding: 10px 100px 10px;
-    text-wrap: nowrap;
-
+/* 把搜索按钮改成充满活力的樱花粉/珊瑚色 */
+button {
+    background-color: #ff7e67; /* 珊瑚橙粉 */
+    color: #ffffff;
+    border: none;
+    border-radius: 40px;
+    padding: 0 35px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 126, 103, 0.4);
+    transition: all 0.3s ease;
 }
 
-ul {
-    margin-top: 70px;
+button:hover {
+    background-color: #ff5e42;
+    transform: scale(1.05) rotate(-2deg); /* 鼠标悬停时放大并微微倾斜，超有活力 */
 }
-
-
 
 /*--------------
-メイン
+メイン (主内容区)
 --------------*/
 main {
     text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+main h1 {
+    font-size: 28px;
+    color: #2c3e50; /* 深蓝灰色，比纯黑柔和 */
+    margin: 50px 0 30px;
+    position: relative;
+    display: inline-block;
+}
+
+/* 标题下方的装饰线改成渐变粉色 */
+main h1::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 5px;
+    background: linear-gradient(to right, #ff9a9e, #fecfef);
+    border-radius: 5px;
+    margin: 15px auto 0;
 }
 
 .M_visual {
     margin-top: 50px;
 }
 
-/*---------  
-検索入力欄
-------------*/
-#search{
-    margin-top: 116px;
+.Tokyo_23 {
+    margin-bottom: 70px;
 }
 
-input{
-    width: 450px;
-    border-radius: 25px;
-    background-color: #d7cfcf;
-    margin-left: 32px;
-    height: 60px;
-    text-align: center;
-    border:solid 1px #000000;
+/*カードをアニメ化*/
+.Tokyo_23 img {
+    border-radius: 24px; /* 更圆润的角 */
+    /* 加一个非常浅的白边，然后配合彩色阴影 */
+    border: 5px solid #ffffff;
+    box-shadow: 0 15px 30px rgba(116, 235, 213, 0.3); /* 青色投影 */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Q弹的动画 */
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
 }
 
-
-button {
-    border-radius: 25px;
-    border:solid 1px #000000;
-    width: 126px;
-    position: relative;
-    font-size: 25px;
-    background-color: #e5dede;
-    left: 9px;
-    top: 6px;
+/* 鼠标悬停：跳跃感 */
+.Tokyo_23 img:hover {
+    transform: translateY(-12px) scale(1.02); 
+    box-shadow: 0 20px 40px rgba(255, 105, 180, 0.4); /* 阴影变成粉色 */
+    border-color: #ffdf00; /* 边框变成亮黄色 */
 }
 
 /*--------------
-フッター
+フッター (页脚)
 --------------*/
-/*フッター*/
-footer{
-    background-color:#ccc;
-    display: flex;/* 横並び */
-    justify-content: space-between;/* flexの左右の配置方法 */
-    align-items: center;/* flexの上下の配置位置 */
-    padding-right: 50px;
-    text-align: center;
-font-weight: bold;
-}
-footer a{
-text-decoration: none;
-color: #000000;
-
-}
-
-.footer_flex{
+footer {
+    /* 页脚换成温柔的香芋紫/深蓝色，告别死黑 */
+    background-color: #6a89cc; 
+    color: #fff;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px;
+    margin-top: 100px;
+    font-weight: bold;
 }
-.footer_decoresion{
-    margin-right: 10px;/*要素を右寄せ*/
+
+footer a {
+    text-decoration: none;
+    color: #e0e0e0;
+    transition: color 0.3s;
 }
-footer img{
+
+footer a:hover {
+    color: #ffdf00; /* 黄色悬停 */
+}
+
+footer img {
     height: 45px;
-    margin-left: 20px;
+    filter: brightness(0) invert(1); /* 让Logo变白适配蓝底 */
+}
+
+#add {
+    color: #fff;
+}
+@media (max-width: 600px) {
+    /* 头部导航：Logo 和 菜单 变成上下两行 */
+    header {
+        flex-direction: column;
+        padding: 15px 10px;
+        gap: 10px;
+    }
+    
+    /* 👇 这里是修改的核心 */
+    .Nav_list {
+        height: 280px; /* 大幅降低手机端背景图的高度 */
+        background-position: center;
+        padding: 0 15px; /* 左右留点空隙 */
+    }
+
+    #search {
+        width: 100%;
+        padding: 6px 6px 6px 15px; /* 缩小搜索框内边距 */
+        border-radius: 30px;
+    }
+
+    /* 👇 强制让输入框自适应宽度，取消 size=50 的影响 */
+    input[type="text"] {
+        flex-grow: 1;
+        width: 100%; 
+        min-width: 0; /* 防止输入框撑破 flex 容器 */
+        font-size: 14px; /* 手机上字体调小 */
+    }
+
+    /* 👇 按钮也小一点 */
+    button {
+        font-size: 14px;
+        padding: 0 15px;
+        height: 40px;
+        white-space: nowrap; /* 文字不折行 */
+    }
+    #gt_float_wrapper {
+        bottom:200px !important;
+        left: 7px !important;
+        z-index: 999999 !important;
+    }
+    /* 标题字号变小 */
+    main h1 {
+        font-size: 22px;
+    }
+
+    /* 卡片区：缩小卡片间距 */
+    .Tokyo_23 {
+        margin-bottom: 30px;
+    }
+
+    /* 页脚：变成上下排列 */
+    footer {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        text-align: center;
+    }
 }

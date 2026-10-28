@@ -43,19 +43,15 @@ try {
 <body>
 <header>
     <h1>
-      <p><a href="index.html"><img src="img/logo.png" alt="東京 Travel" /></a></p>
+        <a href="index.html"><img src="img/logo.png" alt="東京 Travel" /></a>
     </h1>
-
-    <p>
-    <p>
-    <p><a href="loginout.php">ログアウト</a></p>
-    <p><a href="top.php">検索</a></p>
-    <p><a href="list.php">おすすめ</a></p>
-    <p><a href="Yoyaku_servise.html">予約サービス</a></p>
-    </p>
-    </p>
-
-  </header>
+    <div class="nav-links">
+        <a href="loginout.php">ログアウト</a>
+        <a href="top.php">検索</a>
+        <a href="list.php">おすすめ</a>
+        <a href="Yoyaku_servise.html">予約サービス</a>
+    </div>
+</header>
   <h1 id="title">東京都23区以外</h1>
   <?php foreach ($out_area as $row): ?>
     <div id="regionInfo">

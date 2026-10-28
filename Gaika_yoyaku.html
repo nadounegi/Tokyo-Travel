@@ -10,50 +10,54 @@
 </head>
 
 <body>
-    <header>
-        <h1 id="Logo_size">
-            <a href=""><img src="img/logo.png" alt="東京 Travel"/></a>
+  <header>
+        <h1>
+            <a href="index.html"><img src="img/logo.png" alt="東京 Travel" /></a>
         </h1>
-        
-        <p>
-            <p>
-            <p><a href="loginout.php">ログアウト</a></p>
-            <p><a href="top.php">検索</a></p>
-            <p><a href="test_list.php">おすすめ</a></p>
-            <p><a href="Yoyaku_servise.html">予約サービス</a></p>
-            </p>
-        </p>
-    
+        <div class="nav-links">
+            <a href="loginout.php">ログアウト</a>
+            <a href="top.php">検索</a>
+            <a href="list.php">おすすめ</a>
+            <a href="Yoyaku_servise.html">予約サービス</a>
+        </div>
     </header>
-    <main>
-        <h1>外貨両替</h1>
-        <div class="Yoyaku_haiti">
-            <input type="image" src="img/Gaika_image.png" height="200" width="400" />
-        </div>
-        <div class="Yoyaku_haiti">
-            <p>空港旅客ターミナルの各所にてご利用いただけます。<br>
-                24時間営業の両替所につきましては、<br>
-                メンテナンスのため夜間閉店する時間帯がございます。<br>
-                ご利用の両替所に予めお問い合わせいただきますようお願いいたします。<br>
-                また、余った外貨をお客さまが普段ご利用になるポイントに<br>
-                交換するサービス「POCKET CHANGE」もございます。<br>
-                <br>
-                日本円、米ドル、ユーロ、人民元等に対応しております。
-            </p>
+       <main>
+        <h1 class="page-title">外貨両替</h1>
+        
+        <!-- 👇 服务主卡片 -->
+        <div class="service-container">
+            <div class="service-image">
+                <img src="img/Gaika_image.png" alt="外貨両替サービス">
+            </div>
+            
+            <div class="service-text">
+                <p>
+                    空港旅客ターミナルの各所にてご利用いただけます。<br>
+                    24時間営業の両替所につきましては、<br>
+                    メンテナンスのため夜間閉店する時間帯がございます。<br>
+                    ご利用の両替所に予めお問い合わせいただきますようお願いいたします。<br>
+                    また、余った外貨をお客さまが普段ご利用になるポイントに<br>
+                    交換するサービス「POCKET CHANGE」もございます。
+                </p>
+                <p class="note">
+                    日本円、米ドル、ユーロ、人民元等に対応しております。
+                </p>
+            </div>
         </div>
 
-
-        <div class="Yoyaku_haiti">
+        <!-- 👇 返回按钮 -->
+        <div class="bottom-button">
             <a href="Yoyaku_servise.html">
-                <input type="image" src="img/予約サービスボタン.png" height="85" width="250" />
+                <img src="img/予約サービスボタン.png" alt="予約サービスに戻る">
             </a>
         </div>
     </main>
 
     <footer>
-        <p><a href="top.php"><img src="img/logo.png" alt="東京 Travel" /></a></p>
-        <p><a href="Otoiawase.html">お問い合わせ</a></p>
-    </footer>
+    <p><a href="top.html"><img src="img/logo.png" alt="東京 Travel" /></a></p>
+    <a href="jyoho_add.php" id="add">場所管理</a>
+    <a href="area_add.php">区管理</a>
+  </footer>
 </body>
 <div class="gtranslate_wrapper"></div>
 <script>window.gtranslateSettings = {"default_language":"ja","wrapper_selector":".gtranslate_wrapper","float_switcher_open_direction":"bottom","flag_style":"3d"}</script>

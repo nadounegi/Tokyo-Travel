@@ -1,68 +1,3 @@
-<?php
-
-//データベース接続情報を格納
-include("config.php");
-
-try {
-
-  $dbh = new PDO($dsn, $user, $password);
-  $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-  function getotherdata($dbh, $name)
-  {
-    $sql = "SELECT"
-      . " toat.id"
-      . ",toat.name"
-      . ",toat.image_url"
-      . ",toat.description"
-      . ",toat.insert_at"
-      . " FROM tt_other_areasyokai_tb toat"
-      . " WHERE toat.name = :name";
-
-    $stmt = $dbh->prepare($sql);
-    $stmt->execute(['name' => $name]);
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-  }
-
-  // 获取不同分类的数据
-  $otherdata1 = getotherdata($dbh, 'あきる野市');
-  $otherdata2 = getotherdata($dbh, '稲城市');
-  $otherdata3 = getotherdata($dbh, '羽村市');
-  $otherdata4 = getotherdata($dbh, '奥多摩町');
-  $otherdata5 = getotherdata($dbh, '国分寺市');
-  $otherdata6 = getotherdata($dbh, '国立市');
-  $otherdata7 = getotherdata($dbh, '狛江市');
-  $otherdata8 = getotherdata($dbh, '三鷹市');
-  $otherdata9 = getotherdata($dbh, '小金井市');
-  $otherdata10 = getotherdata($dbh, '小平市');
-  $otherdata11 = getotherdata($dbh, '昭島市');
-  $otherdata12 = getotherdata($dbh, '瑞穂町');
-  $otherdata13 = getotherdata($dbh, '清瀬市');
-  $otherdata14 = getotherdata($dbh, '西東京市');
-  $otherdata15 = getotherdata($dbh, '青梅市');
-  $otherdata16 = getotherdata($dbh, '多摩市');
-  $otherdata17 = getotherdata($dbh, '町田市');
-  $otherdata18 = getotherdata($dbh, '調布市');
-  $otherdata19 = getotherdata($dbh, '東久留米市');
-  $otherdata20 = getotherdata($dbh, '東村山市');
-  $otherdata21 = getotherdata($dbh, '東大和市');
-  $otherdata22 = getotherdata($dbh, '日の出町');
-  $otherdata23 = getotherdata($dbh, '日野市');
-  $otherdata24 = getotherdata($dbh, '八王子市');
-  $otherdata25 = getotherdata($dbh, '府中市');
-  $otherdata26 = getotherdata($dbh, '武蔵村山市');
-  $otherdata27 = getotherdata($dbh, '武蔵野市');
-  $otherdata28 = getotherdata($dbh, '福生市');
-  $otherdata29 = getotherdata($dbh, '立川市');
-  $otherdata30 = getotherdata($dbh, '檜原村');
-
-
-
-} catch (PDOException $e) {
-  echo $e->getMessage();
-  die();
-}
-?>
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -80,20 +15,16 @@ try {
 
 
 
-<header>
+   <header>
         <h1>
-            <p><a href="index.html"><img src="img/logo.png" alt="東京 Travel" /></a></p>
+            <a href="index.html"><img src="img/logo.png" alt="東京 Travel" /></a>
         </h1>
-        
-            <p>
-                <p>
-                    <p><a href="user_login.php">ログイン</a></p>
-                    <p><a href="top.php">検索</a></p>
-                    <p><a href="list.php">おすすめ</a></p>
-                    <p><a href="Yoyaku_servise.html">予約サービス</a></p>
-                </p>
-            </p>
-        
+        <div class="nav-links">
+            <a href="loginout.php">ログアウト</a>
+            <a href="top.php">検索</a>
+            <a href="list.php">おすすめ</a>
+            <a href="Yoyaku_servise.html">予約サービス</a>
+        </div>
     </header>
 
   <main>
@@ -134,13 +65,10 @@ try {
     <area shape="poly" coords="68,172,74,169,80,166,89,165,92,160,92,151,93,149,100,147,112,144,120,138,133,138,142,135,147,128,153,129,165,139,177,141,182,138,188,142,190,146,184,150,190,154,195,155,200,162,205,169,209,187,208,198,210,207,214,210,215,216,212,222,214,229,209,236,206,242,204,243,191,243,182,236,174,236,167,228,159,222,150,217,138,217,131,214,125,214,119,212,112,208,104,202,98,200,87,196,76,188,74,180,68,172,69,172,97,194" href="out_syokai.php?name=檜原村" alt="檜原村" />
     </map>
 
-    <p>
-      <a href="other_23.html">２３区以外の紹介</a>
-    </p>
-
-    <p>
-      <a href="index.html">ホームページに戻る</a>
-    </p>
+    <div class="button-container">
+      <p class="button"><a href="other_23.html">２３区以外の紹介</a></p>
+      <p class="button"><a href="index.html">ホームページに戻る</a></p>
+    </div>
   </main>
 
   <footer>

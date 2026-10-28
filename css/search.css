@@ -1,124 +1,263 @@
 @charset "utf-8";
 
-/*--------------
-共通設定 
---------------*/
-ul {
-    list-style: none;
-    text-decoration: none;
-    list-style-type: none;
+/* =========================================
+   共通設定
+   ========================================= */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fdfbfb;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-li a {
+a {
     text-decoration: none;
 }
 
-/*--------------
-ヘッダー
---------------*/
+/* =========================================
+   ヘッダー（ナビゲーション）
+   ========================================= */
 header {
-    background-color: #ccc;
+    background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
     display: flex;
-    /* 横並び */
     justify-content: space-between;
-    /* flexの左右の配置方法 */
     align-items: center;
-    /* flexの上下の配置位置 */
-    padding-right: 50px;
-}
-
-header a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #000;
-}
-
-.Header_flex {
-    display: flex;
-}
-
-.Header_decoresion {
-    margin-right: 10px;
+    padding: 15px 5vw;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 header img {
     height: 45px;
-    margin-left: 20px;
+    max-width: 100%;
 }
 
-/*メイン*/
-main h1 {
-    padding: 10px;
-    margin: 50px auto 50px;
+.nav-links {
     display: flex;
-    justify-content: center;
-    background-color: #ccc;
-    text-wrap: nowrap;
-    width: 50%;
-    border-radius: 40px 40px;
+    gap: 3vw;
+    align-items: center;
 }
 
-.list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    font-size: 20px;
-    font-weight: lighter;
-    width: 900px;
-    margin: auto;
-}
-
-.list img {
-    height: 250px; /* 只设置高度，宽度将会自动调整以保持图片的原始宽高比 */
-    margin-bottom: 15px;
-}
-
-.list li {
-    margin-bottom: 60px;
-    width: 250px;
-}
-
-.list .Osusume_list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.spot_name {
+.nav-links a {
     font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    transition: color 0.3s;
+    font-size: clamp(12px, 1.5vw, 16px);
+    white-space: nowrap;
 }
 
-.Yoyaku_haiti {
+.nav-links a:hover {
+    color: #ffdf00;
+}
+
+/* =========================================
+   メインコンテンツ
+   ========================================= */
+main {
+    flex-grow: 1;
+    padding: 40px 5vw;
     text-align: center;
 }
 
-/*フッター*/
+main h1 {
+    background: #fff;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 28px;
+    color: #2c3e50;
+    border-bottom: 4px solid #ff7e67;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin: 0 auto 40px auto;
+    width: fit-content;
+}
+
+/* =========================================
+   検索結果リスト
+   ========================================= */
+.list {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.Osusume_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* カードの高さを統一する */
+.Osusume_list li {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(116, 235, 213, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+    
+    /* すべてのカードの高さを固定する */
+    height: 500px; 
+}
+.Osusume_list li:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(116, 235, 213, 0.3);
+}
+
+.Osusume_list li a {
+    display: block;
+}
+
+/* 画像のサイズを統一する */
+.Osusume_list li img {
+    width: 100%;
+    height: 220px;
+    /* 画像をすべて表示する場合は object-fit: contain; を使用する */
+    background-color: #ffffff;
+    display: block;
+    /* パディングは削除する */
+}
+
+/* 区名（小さい文字） */
+.area_name {
+    font-size: 13px;
+    color: #888;
+    margin: 15px 20px 5px 20px;
+    text-align: left;
+}
+
+/* スポット名 */
+.spot_name {
+    font-weight: bold;
+    font-size: 18px;
+    color: #2c3e50;
+    margin: 0 20px 10px 20px;
+    text-align: left;
+}
+
+/* スポットの紹介文 */
+.Osusume_list li p:last-child {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin: 0 20px 20px 20px;
+    text-align: left;
+    flex-grow: 1; /* カードの下部を揃えるために余白を埋める */
+}
+
+/* =========================================
+   フッターボタン
+   ========================================= */
+.Yoyaku_haiti {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #fff;
+    color: #ff7e67;
+    border: 2px solid #ff7e67;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 126, 103, 0.1);
+}
+
+.btn:hover {
+    background-color: #ff7e67;
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(255, 126, 103, 0.4);
+}
+
+/* =========================================
+   フッター
+   ========================================= */
 footer {
-    background-color: #ccc;
+    background-color: #6a89cc;
+    color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 50px;
-    text-align: center;
-    position: relative;
-    bottom: -113px;
+    padding: 20px 5vw;
+    font-weight: bold;
+    margin-top: auto;
 }
 
 footer a {
-    text-decoration: none;
-    color: #000000;
+    color: #e0e0e0;
+    transition: color 0.3s;
 }
 
-.footer_flex {
-    display: flex;
-}
-
-.footer_decoresion {
-    margin-right: 10px;
-    /*要素を右寄せ*/
+footer a:hover {
+    color: #ffdf00;
 }
 
 footer img {
-    height: 45px;
-    margin-left: 20px;
+    height: 35px;
+    filter: brightness(0) invert(1);
+}
+
+/* =========================================
+   スマホ向け最適化
+   ========================================= */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        padding: 15px 10px;
+        gap: 10px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    main h1 {
+        font-size: 22px;
+        padding: 10px 20px;
+    }
+
+    .Osusume_list li {
+        width: 90%;
+    }
+
+    .Yoyaku_haiti {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 40px;
+    }
+    
+    .btn {
+        width: 80%;
+        max-width: 300px;
+        text-align: center;
+        padding: 12px 20px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 20px;
+    }
 }

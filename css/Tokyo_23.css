@@ -1,143 +1,213 @@
 @charset "utf-8";
 
-/*--------------
-共通設定 
---------------*/
-
-
-ul{
-    list-style: none;
-    text-decoration: none;
-    list-style-type: none;
-}
-
-li a{
-    text-decoration: none;
-}
-
-/*--------------
-ヘッダー
---------------*/
-header{
-    background-color:#ccc;
-    display: flex;/* 横並び */
-    justify-content: space-between;/* flexの左右の配置方法 */
-    align-items: center;/* flexの上下の配置位置 */
-    padding-right: 50px;
-}
-
-header img{
-    height: 45px;
-    margin-left: 20px;
-}
-
-header a{
-    text-decoration: none;
-    font-weight: bold;
-    color: #000000;
-}
-/*--------------
-ナビゲーション
---------------*/
-.Nav_list {
+/* =========================================
+   全局基础
+   ========================================= */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+    min-height: 100vh;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: aqua;
-    background-image: url(../img/5.jpg);
-    background-size: cover;
-    height: 400px;
+    flex-direction: column;
 }
 
-.Nav_list li {
-    text-align: center;
+a {
+    text-decoration: none;
 }
 
-.H_otoi {
-    margin-right: 50px;
-}
-
-.item {
-    width: auto;
-    margin: 2em;
-    border: solid 1px #000000;
-    background-color: #ccc;
-    padding: 10px 100px 10px;
-    text-wrap: nowrap;
-
-}
-
-main{
-    margin-bottom: 200px;
-}
-
-ul {
-    margin-top: 70px;
-}
-
-
-.Mainimage_text{
-    padding: 20px;
-    margin: auto 35px auto;
-    display: flex;
-    justify-content: center;
-    border:  1px ;
-    background-color: #ccc;
-    width: 30%;
-    font-size: larger;
-    opacity: 0.8;
-    
-}
-
-
-.Tokyo_seibutoubu img{
-    margin-top: 2%;
-    width: 25%;
-}
-
-.Padding_bottom{
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.Tokyo_seibutoubu{
-    text-align: center;
-    padding-top: 20px;
-    position: relative;
-    top: 151px;
-}
-.Font_bold{
-    font-weight: bold;
-    text-align: center;
-    position: relative;
-    top: 164px;
-
-}
-.Contents_center{
-    text-align: center;
-}
-/*フッター*/
-footer{
-    background-color: #ccc;
+/* =========================================
+   头部导航
+   ========================================= */
+header {
+    background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
     display: flex;
     justify-content: space-between;
-    margin-top: 29%;
     align-items: center;
-    padding-right: 50px;
-}
-footer a{
-text-decoration: none;
-color: #000000;
+    padding: 15px 5vw;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.footer_flex{
-    display: flex;
-}
-.footer_decoresion{
-    margin-right: 10px;/*要素を右寄せ*/
-}
-footer img{
+header img {
     height: 45px;
-    margin-left: 20px;
+    max-width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3vw;
+    align-items: center;
+}
+
+.nav-links a {
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    transition: color 0.3s;
+    font-size: clamp(12px, 1.5vw, 16px);
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: #ffdf00;
+}
+
+/* =========================================
+   主内容区
+   ========================================= */
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   区域卡片容器
+   ========================================= */
+.area-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 50px;
+}
+
+/* 卡片本身 */
+.area-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(116, 235, 213, 0.15);
+    border-top: 6px solid #ff7e67; /* 顶部装饰线 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.area-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(116, 235, 213, 0.3);
+}
+
+.area-card h2 {
+    color: #2c3e50;
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px dashed #e0e0e0;
+    text-align: center;
+}
+
+.area-card p {
+    color: #555;
+    font-size: 15px;
+    line-height: 2;
+    margin: 0;
+    text-align: left;
+}
+
+/* =========================================
+   底部按钮
+   ========================================= */
+.map-button-area {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.map-button-area .btn {
+    display: inline-block;
+    padding: 18px 50px;
+    background-color: #fff;
+    color: #ff7e67;
+    border: 2px solid #ff7e67;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 126, 103, 0.1);
+}
+
+.map-button-area .btn:hover {
+    background-color: #ff7e67;
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(255, 126, 103, 0.4);
+}
+
+/* =========================================
+   页脚
+   ========================================= */
+footer {
+    background-color: #6a89cc;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    font-weight: bold;
+    margin-top: auto;
+}
+
+footer a {
+    color: #e0e0e0;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ffdf00;
+}
+
+footer img {
+    height: 35px;
+    filter: brightness(0) invert(1);
+}
+
+/* =========================================
+   👇 手机端专属优化
+   ========================================= */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        padding: 15px 10px;
+        gap: 10px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .area-container {
+        flex-direction: column; /* 手机上卡片上下排列 */
+        align-items: center;
+    }
+
+    .area-card {
+        padding: 20px;
+    }
+
+    .map-button-area .btn {
+        width: 90%;
+        max-width: 300px;
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 20px;
+    }
 }

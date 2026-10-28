@@ -10,65 +10,56 @@
 </head>
 
 <body>
-    <header>
-        <h1>
-            <a href="index.html"><img src="img/logo.png" alt="東京 Travel" /></a>
-        </h1>
-        
-            <p>
-                <p>
-                <p><a href="loginout.php">ログアウト</a></p>
-                <p><a href="top.php">検索</a></p>
-                <p><a href="list.php">おすすめ</a></p>
-                </p>
-            </p>
-        
-    </header>
+  <header>
+      <h1>
+          <a href="index.html"><img src="img/logo.png" alt="東京 Travel" /></a>
+      </h1>
+      <div class="nav-links">
+          <a href="loginout.php">ログアウト</a>
+          <a href="top.php">検索</a>
+          <a href="list.php">おすすめ</a>
+      </div>
+  </header>
 
-    <main>
-        <h1>予約サービス</h1>
-            <div class="Yoyaku_haiti">
-                <a href="Taxi_yoyaku.html">
-                    <input type="image" src="img/Taxi_image.png" height="120" width="250" />
-		</a>
-			<br>
-			タクシー予約
-                     
-            </div>
-            <br>
-            <div class="Yoyaku_haiti">
-                <a href="Wifi_yoyaku.html">
-                    <input type="image" src="img/Wifi_image.png" height="120" width="250" />
-		</a>
-			<br>
-			Wi-fi予約 
-                     
-            </div>
-            <br>
-            <div class="Yoyaku_haiti">
-                <a href="Gaika_yoyaku.html">
-                    <input type="image" src="img/Gaika_image.png" height="120" width="250" /> 
-		</a>
-			<br>
-			外貨予約
-                    
-            </div>
-            <br>
+  <main>
+      <h1 class="page-title">予約サービス</h1>
+      
+      <!-- 👇 三个预约卡片的网格容器 -->
+      <div class="service-grid">
+          <div class="service-card">
+              <a href="Taxi_yoyaku.html">
+                  <img src="img/Taxi_image.png" alt="タクシー予約">
+                  <p>タクシー予約</p>
+              </a>
+          </div>
 
-            <div class="Yoyaku_haiti">
-                <a href="top.php">
-                    <input type="image" src="img/トップページ　ボタン.png" height="85" width="250" /> 
-                </a>    
-                <a href="index.html">
-                    <input type="image" src="img/ホームページ　ボタン2.png" height="85" width="250" />
-                </a>    
-            </div>
-    </main>
+          <div class="service-card">
+              <a href="Wifi_yoyaku.html">
+                  <img src="img/Wifi_image.png" alt="Wi-fi予約">
+                  <p>Wi-fi予約</p>
+              </a>
+          </div>
 
-    <footer>
-        <p><a href="index.html"><img src="img/logo.png" alt="東京 Travel" /></a></p>
-        <p><a href="Otoiawase.html">お問い合わせ</a></p>
-    </footer>
+          <div class="service-card">
+              <a href="Gaika_yoyaku.html">
+                  <img src="img/Gaika_image.png" alt="外貨予約">
+                  <p>外貨予約</p>
+              </a>
+          </div>
+      </div>
+
+      <!-- 👇 底部返回按钮 -->
+      <div class="bottom-buttons">
+          <a href="top.php"><img src="img/トップページ　ボタン.png" alt="トップページに戻る"></a>
+          <a href="index.html"><img src="img/ホームページ　ボタン2.png" alt="ホームページに戻る"></a>
+      </div>
+  </main>
+
+  <footer>
+    <p><a href="top.html"><img src="img/logo.png" alt="東京 Travel" /></a></p>
+    <a href="jyoho_add.php" id="add">場所管理</a>
+    <a href="area_add.php">区管理</a>
+  </footer>
 </body>
 <div class="gtranslate_wrapper"></div>
 <script>window.gtranslateSettings = {"default_language":"ja","wrapper_selector":".gtranslate_wrapper","float_switcher_open_direction":"bottom","flag_style":"3d"}</script>

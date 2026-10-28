@@ -1,130 +1,220 @@
 @charset "utf-8";
 
-/*--------------
-ヘッダー
---------------*/
-header{
-    background-color: #ccc;
+/* =========================================
+   全局基础
+   ========================================= */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fdfbfb;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 50px;
+    flex-direction: column;
 }
 
-header img{
-    height: 45px;
-    margin-left: 20px;
-}
-
-header a{
+a {
     text-decoration: none;
-    font-weight: bold;
-    color: #000000;
+}
+/* =========================================
+   调整谷歌翻译按钮的高度和位置 (强行覆盖)
+   ========================================= */
+
+/* 使用 ID 选择器 + !important 才能打败 HTML 里的行内样式 */
+#gt_float_wrapper {
+    bottom: 90px !important; /* 👈 在这里调整高度，数字越大越往上 */
+    left: 20px !important;
+    z-index: 999999 !important;
 }
 
-/*--------------
-ナビゲーション
---------------*/
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: aqua;
-    background-image: url("../img/rf10161070462_o.jpg");
-    background-size: cover;
-    height: 400px;
+/* 里面的按钮样式（可选美化） */
+.gtranslate_wrapper .gt_float_switcher {
+    background-color: #fff !important;
+    border-radius: 50px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
+    padding: 10px 15px !important; 
 }
 
-
-nav p {
-    padding: 20px;
-    margin: auto 35px auto;
-    display: flex;
-    justify-content: center;
-    background-color: #ccc;
-    text-wrap: nowrap;
-    width: 30%;
-    align-items: center;
-    font-size: larger;
-    opacity: 0.8;
-}
-.Nav_list li {
-    text-align: center;
+/* 按钮里的文字 */
+.gtranslate_wrapper .gt_float_switcher .gt_selected a {
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: #333 !important;
 }
 
-.H_otoi {
-    margin-right: 50px;
-}
-
-.item {
-    width: auto;
-    margin: 2em;
-    border: solid 1px #000000;
-    background-color: #ccc;
-    padding: 10px 100px 10px;
-    text-wrap: nowrap;
-
-}
-
-ul {
-    margin-top: 70px;
-}
-
-/*-------------
-メイン
---------------*/
-
-main p {
-    text-align: center;
-    margin: 2em;
-}
-
-
-.Si_name {
-    text-align: center;
-    margin-bottom: 2em;
-}
-
-#M_annai {
-    align-items: center;
-    padding: 20px;
-    margin: auto 35px auto;
-    display: flex;
-    justify-content: center;
-    border: solid 1px;
-    text-wrap: nowrap;
-    width: 30%;
-    margin-left: 35%;
-    margin-bottom: 2em;
-}
-
-/*--------------
-フッター
---------------*/
-/*�t�b�^�[*/
-footer{
-    background-color: #ccc;
+/* =========================================
+   头部导航 (海洋渐变)
+   ========================================= */
+header {
+    background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 50px;
-    text-align: center;
-    font-weight: bold;
-    margin-top: 10%;
-}
-footer a{
-text-decoration: none;
-color: #000000;
-
+    padding: 15px 5vw; /* 随屏幕缩放 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.footer_flex{
-    display: flex;
-}
-.footer_decoresion{
-    margin-right: 10px;/*要素を右寄せ*/
-}
-footer img{
+header img {
     height: 45px;
-    margin-left: 20px;
+    max-width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3vw; /* 👈 彻底告别 154px 的死亡间距 */
+}
+
+.nav-links a {
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    transition: color 0.3s;
+    font-size: clamp(12px, 1.5vw, 16px);
+    white-space: nowrap; /* 强制文字不换行 */
+}
+
+.nav-links a:hover {
+    color: #ffdf00;
+}
+
+/* =========================================
+   主视觉区 (背景图 + 悬浮卡片)
+   ========================================= */
+nav {
+    /* 这里换成你自己的背景图路径 */
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../img/rf10161070462_o.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 600px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* 给卡片留点呼吸空间 */
+}
+
+/* 悬浮在背景图上的白色半透明卡片 */
+.nav-overlay {
+    background: rgba(255, 255, 255, 0.9); /* 90% 不透明的白色 */
+    backdrop-filter: blur(10px); /* 毛玻璃特效 */
+    padding: 50px 60px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 700px;
+    width: 100%; /* 改成 100%，配合父级的 padding 就不会溢出 */
+    box-sizing: border-box;
+}
+
+.nav-overlay h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px dashed #e0e0e0;
+}
+
+.description-text {
+    font-size: 18px;
+    line-height: 2;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* 底部地图按钮 */
+.map-button {
+    display: inline-block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.map-button img {
+    width: 220px; 
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.map-button:hover {
+    transform: translateY(-5px) scale(1.02);
+    filter: drop-shadow(0 15px 25px rgba(255, 126, 103, 0.4));
+}
+
+/* =========================================
+   页脚
+   ========================================= */
+footer {
+    background-color: #6a89cc;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5vw;
+    font-weight: bold;
+    margin-top: auto; /* 确保内容少的时候页脚也在最下面 */
+}
+
+footer a {
+    text-decoration: none;
+    color: #e0e0e0;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ffdf00;
+}
+
+footer img {
+    height: 35px;
+    filter: brightness(0) invert(1);
+}
+
+/* =========================================
+   👇 手机端专属优化 (屏幕小于 600px 时生效)
+   ========================================= */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column; /* 手机上 Logo 和菜单变上下两行 */
+        padding: 15px 10px;
+        gap: 10px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    nav {
+        height: 500px; /* 手机上背景图稍微矮一点 */
+    }
+
+    .nav-overlay {
+        padding: 30px 20px; /* 手机上卡片内边距缩小 */
+    }
+
+    .nav-overlay h2 {
+        font-size: 22px;
+    }
+
+    .description-text {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+     #gt_float_wrapper {
+        bottom: 116px !important;
+        left: 7px !important;
+        z-index: 999999 !important;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
 }

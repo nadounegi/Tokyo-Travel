@@ -43,7 +43,7 @@ try {
 <body>
   <header>
     <h1>
-      <p><a href="top.html"><img src="img/logo.png" alt="東京 Travel" /></a></p>
+      <p><a href="top.php "><img src="img/logo.png" alt="東京 Travel" /></a></p>
     </h1>
 
 
@@ -75,10 +75,10 @@ try {
   <p id="homepage">
     <a href="top.html">ホームページに戻る</a>
   </p>
-  <footer>
-    <h1 class="logo">
-      <a href="top.html"><img src=" img/logo.png" alt="東京 Trave"></a>
-    </h1>
+ <footer>
+    <p><a href="top.html"><img src="img/logo.png" alt="東京 Travel" /></a></p>
+    <a href="jyoho_add.php" id="add">場所管理</a>
+    <a href="area_add.php">区管理</a>
   </footer>
 
 </body>

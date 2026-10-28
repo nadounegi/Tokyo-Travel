@@ -1,164 +1,210 @@
-header {
-  display: flex;
-  width: 1920px;
-  height: 145px;
-  background-color: rgba(61, 55, 55, 0.18);
-  align-items: center;
-  /* 垂直居中对齐 */
+@charset "utf-8";
 
-  color: rgb(0, 0, 0);
-  /* 设置文本颜色 */
-
-}
-
-
-.Trave {
-  margin-left: 28px;
-  margin-top: -4px;
-  /* 添加单位，例如 px */
-  align-items: center;
-  /* 垂直居中对齐 */
-  font-size: 50px;
-
-}
-
-.caidan {
-  margin-top: 67px;
-  margin-left: 425px;
-  padding: 0;
-  list-style-type: none;
-  display: flex;
-  /* 使用 Flexbox 布局 */
-  font-size: 24px;
+/* =========================================
+   全局重置与基础设置
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  background-image: url();
-}
-
-.caidan li {
-  margin-right: 46px;
-  /* 设置右侧间隔为 46px */
-}
-
-.caidan li:last-child {
-  margin-right: 0;
-  /* 最后一个列表项不设置右侧间隔 */
-}
-
-.caidan a {
-  text-decoration: none;
-  /* color: #333; 链接颜色 */
-  /* font-weight: bold; 字体加粗 */
-}
-
-.anniu {
-  width: 771px;
-  height: 190px;
-  border-radius: 100px;
-  background-color: rgba(61, 55, 55, 0.18);
-  margin: 195px auto 0;
-  /* 上方边框间隔为 340px，左右自动居中 */
-  text-align: center;
-  /* 文本居中 */
-  padding: 1px;
-
-  font-size: 60px;
-}
-
-.delu {
-
-  width: 1100px;
-  height: 625px;
-  margin: 138px auto 0;
-
-  background-color: rgba(220, 219, 219, 0.10);
-  border: 1px solid #707070;
-}
-
-.register p {
-  padding: 62px 144px 5px 100px;
-  text-align: center;
-  font-size: 38px;
-  color: #707070;
-}
-
-#toroku {
-  margin-left: 877px;
-  margin-top: 20px;
-
-}
-
-#Mail {
-  background-color: rgb(210, 197, 155, 24%);
-  width: 757px;
-  height: 86px;
-}
-
-#Send {
-  border-radius: 100px;
-  width: 200px;
-  height: 86px;
-  font-size: 39px;
-  color: #707070;
-}
-
-#Password {
-  width: 597px;
-  height: 95px;
-  background-color: rgb(210, 197, 155, 24%);
-
-}
-
-.motoru {
-  display: flex;
-  justify-content: center;
-  /* 水平居中 */
-  margin: 75px auto 63px;
-}
-
-.motoru p+p {
-  margin-left: 196px;
-  /* 两个 p 元素之间的间隔为 196px */
-}
-
-.motoru img {
-
-  width: 500px;
+    /* 和登录页保持一致，使用清新的海洋渐变背景 */
+    background: linear-gradient(135deg, #e0f2f1 0%, #fff8e1 100%);
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
+    color: #333;
 }
 
-input {
-  font-size: 38px;
+/* =========================================
+   头部导航 (自适应宽度)
+   ========================================= */
+header {
+    width: 100%;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
 }
 
+.Trave img {
+    height: 45px; /* 控制 Logo 大小 */
+}
+
+/* =========================================
+   主体区域
+   ========================================= */
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* =========================================
+   注册表单卡片
+   ========================================= */
+form {
+    background: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    padding: 50px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(116, 235, 213, 0.2);
+}
+
+/* 标题区 */
+.anniu {
+    text-align: center;
+    margin-bottom: 40px;
+    width: auto; /* 覆盖掉你以前的 771px */
+    height: auto;
+    background-color: transparent; /* 去掉以前的灰底 */
+    border-radius: 0;
+}
+
+.anniu p {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2c3e50;
+    position: relative;
+    display: inline-block;
+}
+
+/* 标题下的小粉线 */
+.anniu p::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #ff7e67;
+    border-radius: 2px;
+    margin: 10px auto 0;
+}
+
+/* 输入框表单组 */
+.register p {
+    padding: 0; /* 清除你原本写死的 62px 内边距 */
+    margin-bottom: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+    text-align: left; /* 文字靠左 */
+}
+
+.register label {
+    display: block; /* 让标签独占一行 */
+    margin-bottom: 8px;
+}
+
+/* 统一输入框样式 */
+.register input[type="text"],
+.register input[type="password"] {
+    width: 100%;
+    height: 55px;
+    padding: 0 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.register input[type="text"]:focus,
+.register input[type="password"]:focus {
+    border-color: #74ebd5;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(116, 235, 213, 0.4);
+}
+
+/* =========================================
+   提交按钮
+   ========================================= */
+#toroku {
+    display: block;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(135deg, #ff9a9e 0%, #ff7e67 100%);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 126, 103, 0.4);
+    transition: all 0.3s ease;
+    margin: 30px 0 0 0; /* 清除你以前的 877px 离谱左边距 */
+}
+
+#toroku:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 126, 103, 0.6);
+}
+
+/* =========================================
+   底部图片按钮
+   ========================================= */
+.motoru {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.motoru img {
+    height: 60px; /* 把以前 500px 的巨无霸图片缩小 */
+    transition: transform 0.3s;
+}
+
+.motoru img:hover {
+    transform: scale(1.1);
+}
+
+.motoru p {
+    margin: 0;
+}
+
+/* =========================================
+   页脚
+   ========================================= */
 footer {
-  display: flex;
-  width: auto;
-  height: 145px;
-  background-color: rgba(61, 55, 55, 0.18);
-  align-items: center;
-  /* 垂直居中对齐 */
-
-  justify-content: space-between;
-  /* 左右两侧分布 */
-  font-size: 50px;
-  color: rgb(0, 0, 0);
-  /* 设置文本颜色 */
-
-}
-footer a{
-text-decoration: none;
-color: #000000;
+    background-color: #ffffff;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    margin-top: auto; /* 把页脚压在最底下 */
+    font-size: 16px; /* 恢复到正常字号 */
+    color: #555;
 }
 
 footer .left {
-  padding-left: 20%;
+    padding-left: 0; /* 清除 20% 的离谱边距 */
+    font-weight: bold;
 }
 
 footer .right {
-  padding-right: 20%;
+    padding-right: 0; /* 清除 20% 的离谱边距 */
+    font-size: 16px !important; /* 覆盖掉你 HTML 里写的行内 30px */
+    font-weight: bold;
+}
+
+footer img {
+    height: 35px;
+    vertical-align: middle;
 }

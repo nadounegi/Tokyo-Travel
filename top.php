@@ -22,21 +22,16 @@ if (!isset($_SESSION['user_id'])) {
     <div class="gtranslate_wrapper"></div>
     <script>window.gtranslateSettings = { "default_language": "ja", "native_language_names": true, "wrapper_selector": ".gtranslate_wrapper", "flag_style": "3d" }</script>
     <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-
     <header>
         <h1>
-            <p><a href="index.html"><img src="img/logo.png" alt="東京 Travel" /></a></p>
+            <a href="index.html"><img src="img/logo.png" alt="東京 Travel" /></a>
         </h1>
-
-        <p>
-        <p>
-        <p><a href="loginout.php">ログアウト</a></p>
-        <p><a href="top.php">検索</a></p>
-        <p><a href="list.php">おすすめ</a></p>
-        <p><a href="Yoyaku_servise.html">予約サービス</a></p>
-        </p>
-        </p>
-
+        <div class="nav-links">
+            <a href="loginout.php">ログアウト</a>
+            <a href="top.php">検索</a>
+            <a href="list.php">おすすめ</a>
+            <a href="Yoyaku_servise.html">予約サービス</a>
+        </div>
     </header>
     <nav class="Nav_list">
         <ul>
@@ -68,10 +63,12 @@ if (!isset($_SESSION['user_id'])) {
     </main>
 	<br>
 	<br>
-    <footer>
-        <p><a href="index.html"><img src="img/logo.png" alt="東京 Travel" /></a></p>
-        <p><a href="Otoiawase.html">お問い合わせ</a></p>
-    </footer>
+  
+  <footer>
+    <p><a href="top.html"><img src="img/logo.png" alt="東京 Travel" /></a></p>
+    <a href="jyoho_add.php" id="add">場所管理</a>
+    <a href="area_add.php">区管理</a>
+  </footer>
 </body>
 <div class="gtranslate_wrapper"></div>
 <script>window.gtranslateSettings = {"default_language":"ja","wrapper_selector":".gtranslate_wrapper","float_switcher_open_direction":"bottom","flag_style":"3d"}</script>

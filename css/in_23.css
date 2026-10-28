@@ -1,200 +1,130 @@
 @charset "utf-8";
 
-/*--------------
-共通設定 
---------------*/
-ul{
-    list-style: none;
-    list-style-type: none;
-}
-
-a {
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-}
-
-/*--------------
-ヘッダー
---------------*/
-
-header{
-    background-color: #ccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 50px;
-    height: 53px;
-  }
-  
-  header img{
-    height: 45px;
-    margin-left: 20px;
-    margin-top: 10px;
-  }
-  
-  header a{
-    text-decoration: none;
-    font-weight: bold;
-    color: #000000;
-  }
-  -----
-ナビゲーション
---------------*/
-.Nav_list {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: aqua;
-    background-image: url(../img/5.jpg);
-    background-size: cover;
-    height: 400px;
-}
-
-.Nav_list li {
-    text-align: center;
-}
-
-.H_otoi {
-    margin-right: 50px;
-}
-
-.item {
-    width: auto;
-    margin: 2em;
-    border: solid 1px #000000;
-    background-color: #ccc;
-    padding: 10px 100px 10px;
-    text-wrap: nowrap;
-
-}
-
-ul {
-    margin-top: 70px;
-}
-
-/*--------------
-メイン
---------------*/
-
-main{
-    text-align: center;
-    
-}
-
-main h1{
-    padding: 10px;
-    margin: 50px auto 50px;
-    display: flex;
-    justify-content: center;
-    border: solid 1px #000000;
-    background-color: #ccc;
-    text-wrap: nowrap;
-    width: 50%;
-}
-
-main p{
-    padding: 10px;
-    margin: 30px auto 30px;
-    display: flex;
-    justify-content: center;
-    border: solid 1px #000000;
-    background-color: #ccc;
-    text-wrap: nowrap;
-    width: 30%;
-}
-
-main img{
-    margin-bottom: auto;
-}
-
-#stationMap{
-    width: 400px;
-    height: 100%;
-}
-
-.container{
-    position: relative;
-    width: 400px;
-    height: 400px;
-}
-
-.image{
-    width: 100%;
-    height: auto;
-}
-
-.zoom{
-    border: 1px solid #ccc;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 200px;
-    background-repeat: no-repeat;
-    background-size: 800px 800px;
-    display: none;
-}
-
-.button {
-    width: 250px;
-    margin: 0 auto 20px auto;
-    padding: 20px;
-    border: 1px solid grey;
-    border-radius: 20px;
-    background-color: grey;
-  }
-
-/*--------------
-フッター
---------------*/
-footer{
-    background-color:#ccc;
-    display: flex;/* 横並び */
-    justify-content: space-between;/* flexの左右の配置方法 */
-    align-items: center;/* flexの上下の配置位置 */
-    padding-right: 50px;
-    text-align: center;
-font-weight: bold;
-}
-footer a{
-text-decoration: none;
-color: #000000;
-
-}
-
-.footer_flex{
-    display: flex;
-}
-.footer_decoresion{
-    margin-right: 10px;/*要素を右寄せ*/
-}
-footer img{
-    height: 45px;
-    margin-left: 20px;
-}
-/*--------------
-虫眼鏡
---------------*/
-
-
-
-.magGlass{
-    width: 350px;
-    padding: 35px 35px;
-}
-
+/* =========================================
+   共通設定
+   ========================================= */
 * {
     box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+/* =========================================
+   调整谷歌翻译按钮的高度和位置 (强行覆盖)
+   ========================================= */
+
+/* 使用 ID 选择器 + !important 才能打败 HTML 里的行内样式 */
+#gt_float_wrapper {
+    bottom: 90px !important; /* 👈 在这里调整高度，数字越大越往上 */
+    left: 20px !important;
+    z-index: 999999 !important;
+}
+
+/* 里面的按钮样式（可选美化） */
+.gtranslate_wrapper .gt_float_switcher {
+    background-color: #fff !important;
+    border-radius: 50px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
+    padding: 10px 15px !important; 
+}
+
+/* 按钮里的文字 */
+.gtranslate_wrapper .gt_float_switcher .gt_selected a {
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: #333 !important;
+}
+/* =========================================
+   ヘッダー
+   ========================================= */
+header {
+    background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5vw;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header img {
+    height: 45px;
+    max-width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3vw;
+    white-space: nowrap;
+}
+
+.nav-links a {
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    transition: color 0.3s;
+    font-size: clamp(12px, 1.5vw, 16px);
+}
+
+.nav-links a:hover {
+    color: #ffdf00;
+}
+
+/* =========================================
+   メインコンテンツ
+   ========================================= */
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 5vw 20px;
+    text-align: center;
+    width: 100%; /* 👈 确保不超过屏幕 */
+}
+
+main h1 {
+    background: #fff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: clamp(20px, 2.5vw, 28px);
+    color: #2c3e50;
+    border-bottom: 4px solid #ff7e67;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   虫眼鏡（拡大鏡）
+   ========================================= */
 .img-magnifier-container {
     position: relative;
+    display: inline-block;
+    max-width: 100%;
+    width: clamp(280px, 85vw, 800px); /* 👈 手机端占比 85vw，绝不溢出 */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
 .img-magnifier-container img {
-    width: 800px;
-    height: auto; /* 或者设置为特定的高度 */
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 0; 
 }
 
 .img-magnifier-glass {
@@ -206,4 +136,121 @@ footer img{
     height: 150px;
     top: 0;
     left: 0;
+}
+
+/* =========================================
+   フッターボタン
+   ========================================= */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.button {
+    margin: 0;
+}
+
+.button a {
+    display: block;
+    padding: 15px 30px;
+    background-color: #fff;
+    color: #ff7e67;
+    border: 2px solid #ff7e67;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: clamp(14px, 1.5vw, 16px);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.button a:hover {
+    background-color: #ff7e67;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255,126,103,0.3);
+}
+
+/* =========================================
+   フッター
+   ========================================= */
+footer {
+    background-color: #6a89cc;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5vw;
+    font-weight: bold;
+    margin-top: auto;
+    width: 100%;
+}
+
+footer a {
+    color: #e0e0e0;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ffdf00;
+}
+
+footer img {
+    height: 35px;
+    filter: brightness(0) invert(1);
+}
+
+/* =========================================
+   👇 手机端专属优化 (屏幕小于 600px 时生效)
+   ========================================= */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column; /* 手机上头部改成上下两行 */
+        padding: 15px 10px;
+        gap: 10px;
+    }
+    
+    .nav-links {
+        width: 100%;
+        justify-content: center; /* 导航居中 */
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    main h1 {
+        font-size: 20px; /* 手机上标题变小 */
+        padding: 10px 20px;
+    }
+
+    .button-container {
+        flex-direction: column; /* 手机端按钮上下排列 */
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .button a {
+        width: 200px; /* 手机端按钮统一宽度 */
+        text-align: center;
+    }
+    #gt_float_wrapper {
+        bottom: 166px !important;
+        left: 7px !important;
+        z-index: 999999 !important;
+    }
+
+    footer {
+        flex-direction: column; /* 手机端页脚上下排列 */
+        gap: 10px;
+        text-align: center;
+        padding: 15px;
+    }
+
+    footer img {
+        height: 30px;
+    }
 }

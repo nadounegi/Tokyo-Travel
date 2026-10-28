@@ -4,7 +4,7 @@
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>東京23区</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="css/Tokyo_23.css">
 </head>
@@ -14,42 +14,49 @@
     <h1 id="Logo_size">
         <a href="index.html"><img src="img/logo.png" alt="東京 Travel"/></a>
     </h1>
-    
-    <p>
-        <p>
-        <p><a href="loginout.php">ログアウト</a></p>
-        <p><a href="top.php">検索</a></p>
-        <p><a href="list.php">おすすめ</a></p>
-        <p><a href="Yoyaku_servise.html">予約サービス</a></p>
-        </p>
-    </p>
-
+    <div class="nav-links">
+        <a href="loginout.php">ログアウト</a>
+        <a href="top.php">検索</a>
+        <a href="list.php">おすすめ</a>
+        <a href="Yoyaku_servise.html">予約サービス</a>
+    </div>
 </header>
 
-
 <main>
-        <br>
-        <p class="Font_bold">23区西部（16区）</p><br>
-        <p class="Tokyo_seibutoubu">
-        中央区、千代田区、文京区、港区、新宿区、<br>
-        品川区、目黒区、大田区、市田谷区、渋谷区、<br>
-        中野区、杉並区、練馬区、板橋区、豊島区、北区<br>
-        <br>   
-        <p class="Font_bold">23区東部（7区）</p><br>
-        <p class="Tokyo_seibutoubu">
-        台東区、墨田区、江東区、荒川区、<br>
-        足立区、葛飾区、江戸川区<br>
-        </p>
-   </p>
-   <p class="Tokyo_seibutoubu">
-    <a href="in_23_map.php"><img src="img/Toukyou23_button.png"></a>
-   </p>
+    <div class="area-container">
+        <!-- 西部区块 -->
+        <div class="area-card">
+            <h2>23区西部（16区）</h2>
+            <p>
+                中央区、千代田区、文京区、港区、新宿区、<br>
+                品川区、目黒区、大田区、世田谷区、渋谷区、<br>
+                中野区、杉並区、練馬区、板橋区、豊島区、北区
+            </p>
+        </div>
+
+        <!-- 东部区块 -->
+        <div class="area-card">
+            <h2>23区東部（7区）</h2>
+            <p>
+                台東区、墨田区、江東区、荒川区、<br>
+                足立区、葛飾区、江戸川区
+            </p>
+        </div>
+    </div>
+
+    <!-- 底部按钮 -->
+     <div class="map-button-area">
+        <a href="in_23_map.php" class="btn">東京23区の地図と駅</a>
+    </div>
 </main>
-   <footer>
-        <p><a href="top.php"><img src="img/logo.png" alt="東京 Travel" /></a></p>
-        <p><a href="Otoiawase.html">お問い合わせ</a></p>
-    </footer>
-</body>
+
+ <footer>
+    <p><a href="top.html"><img src="img/logo.png" alt="東京 Travel" /></a></p>
+    <a href="jyoho_add.php" id="add">場所管理</a>
+    <a href="area_add.php">区管理</a>
+</footer>
 <div class="gtranslate_wrapper"></div>
 <script>window.gtranslateSettings = {"default_language":"ja","wrapper_selector":".gtranslate_wrapper","float_switcher_open_direction":"bottom","flag_style":"3d"}</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script></html>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+</body>
+</html>

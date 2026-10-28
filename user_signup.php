@@ -3,8 +3,7 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 ?>
 <?php
-
-//データベース接続情報を格納
+// データベース接続情報を格納
 include("config.php");
 
 $txt_user = "";
@@ -13,7 +12,7 @@ $txt_pass = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    //POSTデータの取得
+    // POSTデータの取得
     $txt_user = $_POST['txt_user'];
     $txt_email = $_POST['txt_email'];
     $txt_pass = $_POST['txt_pass'];
@@ -104,7 +103,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </main>
     <footer>
         <div class="left">東京<img src="/デザイン/グループ 6.jpg" alt="">Travel</div>
-        <div class="right" style="font-size: 30px;">お問い合わせ</div>
     </footer>
 </body>
 <div class="gtranslate_wrapper"></div>

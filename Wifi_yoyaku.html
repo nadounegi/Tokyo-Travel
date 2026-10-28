@@ -6,41 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WIFI/SIM予約</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
-    <link rel="stylesheet" href="css/Wifi_yoyaku.css" />
+    <link rel="stylesheet" href="css/yoyaku.css" />
 </head>
 
 <body>
-    <header>
+   <header>
         <h1>
             <a href="index.html"><img src="img/logo.png" alt="東京 Travel" /></a>
         </h1>
-        
-            <p>
-                <p>
-                <p><a href="loginout.php">ログアウト</a></p>
-                <p><a href="top.php">検索</a></p>
-                <p><a href="test_list.php">おすすめ</a></p>
-                <p><a href="Yoyaku_servise.html">予約サービス</a></p>
-                </p>
-            </p>
-        
+        <div class="nav-links">
+            <a href="loginout.php">ログアウト</a>
+            <a href="top.php">検索</a>
+            <a href="list.php">おすすめ</a>
+            <a href="Yoyaku_servise.html">予約サービス</a>
+        </div>
     </header>
     <main>
-        <h1>WIFI/SIM予約</h1>
-        <div class="Yoyaku_haiti">
-            <input type="image" src="img/Wifiyoyaku_image.png" height="200" width="400" /> 
-        </div>
-        <div class="Yoyaku_haiti">
-            <p>各種サービスの手続きや相談ができる店舗がございます。<br>
-            また、海外または日本国内でご利用いだだける携帯電話、<br>
-            モバイルWiFiルーター、データ通信カード等の<br>
-            レンタルサービスを行っています。</p>
-        </div>
+        <h1 class="page-title">WIFI/SIM予約</h1>
         
-           
-        <div class="Yoyaku_haiti">
-            <a href="Yoyaku_servise.html">    
-                <input type="image" src="img/予約サービスボタン.png" height="85" width="250" /> 
+        <!-- 👇 服务主卡片 -->
+        <div class="service-container">
+            <div class="service-image">
+                <img src="img/Wifiyoyaku_image.png" alt="WIFI/SIMサービス">
+            </div>
+            
+            <div class="service-text">
+                <p>
+                    各種サービスの手続きや相談ができる店舗がございます。<br>
+                    また、海外または日本国内でご利用いだだける携帯電話、<br>
+                    モバイルWiFiルーター、データ通信カード等の<br>
+                    レンタルサービスを行っています。
+                </p>
+            </div>
+        </div>
+
+        <!-- 👇 返回按钮 -->
+        <div class="bottom-button">
+            <a href="Yoyaku_servise.html">
+                <img src="img/予約サービスボタン.png" alt="予約サービスに戻る">
             </a>
         </div>
     </main>
