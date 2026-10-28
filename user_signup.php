@@ -76,22 +76,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="Trave"><a href="index.html"><img src="img/logo.png" alt=""></a></div>
     </header>
     <main>
-        <form action="" method="POST">
+        <form action="" method="POST" autocomplete="off">
             <div class="anniu">
                 <p>会員登録/SignUp</p>
             </div>
             <div class="register">
                 <p>
                     <label>ユーザー名：</label>
-                    <input type="text" name="txt_user">
+                    <input type="text" name="txt_user" autocomplete="off">
                 </p>
                 <p>
                     <label>メールアドレス：</label>
-                    <input type="text" name="txt_email">
+                    <input type="text" name="txt_email" autocomplete="off">
                 </p>
                 <p>
                     <label>パスワード：</label>
-                    <input type="password" name="txt_pass">
+                    <input type="password" name="txt_pass" autocomplete="off">
                 </p>
                 <input type="submit" name="submit" value="会員登録する" id="toroku">
             </div>
