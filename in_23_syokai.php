@@ -41,20 +41,16 @@ try {
 </head>
 
 <body>
-  <header>
+<header>
     <h1>
-      <p><a href="top.php "><img src="img/logo.png" alt="東京 Travel" /></a></p>
+      <a href="top.php"><img src="img/logo.png" alt="東京 Travel" /></a>
     </h1>
-
-
-    <ul class="navlist">
-      <p class="navItem"><a href="user_login.php">ログイン</a></p>
-      <p class="navItem"><a href="top.html">検索</a></p>
-      <p class="navItem"><a href="list.php">おすすめ</a></p>
-      <p class="navItem"><a href="Yoyaku_servise.html ">予約サービス</a></p>
-    </ul>
-
-
+    <div class="nav-links">
+        <a href="user_login.php">ログイン</a>
+        <a href="top.php">検索</a>
+        <a href="list.php">おすすめ</a>
+        <a href="Yoyaku_servise.html">予約サービス</a>
+    </div>
   </header>
   <h1 id="area23">東京都23区</h1>
   <?php foreach ($area as $row): ?>
@@ -73,10 +69,10 @@ try {
   </p>
 
   <p id="homepage">
-    <a href="top.html">ホームページに戻る</a>
+    <a href="top.php">ホームページに戻る</a>
   </p>
  <footer>
-    <p><a href="top.html"><img src="img/logo.png" alt="東京 Travel" /></a></p>
+    <p><a href="top.php"><img src="img/logo.png" alt="東京 Travel" /></a></p>
     <a href="jyoho_add.php" id="add">場所管理</a>
     <a href="area_add.php">区管理</a>
   </footer>

@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* =========================================
-   全局基础
+   共通設定
    ========================================= */
 body {
     margin: 0;
@@ -12,18 +12,18 @@ body {
     display: flex;
     flex-direction: column;
 }
-/* =========================================
-   调整谷歌翻译按钮的高度和位置 (强行覆盖)
-   ========================================= */
 
-/* 使用 ID 选择器 + !important 才能打败 HTML 里的行内样式 */
+a { text-decoration: none; }
+
+/* =========================================
+   グーグル翻訳ボタンの高さと位置を調整
+   ========================================= */
 #gt_float_wrapper {
-    bottom: 90px !important; /* 👈 在这里调整高度，数字越大越往上 */
+    bottom: 90px !important;
     left: 20px !important;
     z-index: 999999 !important;
 }
 
-/* 里面的按钮样式（可选美化） */
 .gtranslate_wrapper .gt_float_switcher {
     background-color: #fff !important;
     border-radius: 50px !important;
@@ -31,7 +31,6 @@ body {
     padding: 10px 15px !important; 
 }
 
-/* 按钮里的文字 */
 .gtranslate_wrapper .gt_float_switcher .gt_selected a {
     font-size: 14px !important;
     font-weight: bold !important;
@@ -39,7 +38,7 @@ body {
 }
 
 /* =========================================
-   头部导航 (彻底修复死亡间距)
+   ヘッダーナビゲーション
    ========================================= */
 header {
     background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
@@ -60,11 +59,10 @@ header img {
 
 .nav-links {
     display: flex;
-    gap: 3vw; /* 👈 改用 vw，自适应屏幕宽度 */
+    gap: 3vw;
 }
 
 .nav-links a {
-    text-decoration: none;
     font-weight: bold;
     color: #fff;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
@@ -78,14 +76,13 @@ header img {
 }
 
 /* =========================================
-   主内容区
+   メインコンテンツ
    ========================================= */
 main {
     flex-grow: 1;
     padding-bottom: 50px;
 }
 
-/* 标题美化 */
 .yoyaku {
     text-align: center;
     margin: 50px auto 40px auto;
@@ -100,7 +97,6 @@ main {
     border-bottom: 4px solid #ff7e67;
 }
 
-/* 卡片容器 */
 .koumoku {
     display: flex;
     justify-content: center;
@@ -111,7 +107,9 @@ main {
     padding: 0 20px;
 }
 
-/* 现代卡片样式 */
+/* =========================================
+   カードスタイル
+   ========================================= */
 .card {
     background-color: #ffffff;
     border: none;
@@ -132,7 +130,6 @@ main {
     box-shadow: 0 15px 35px rgba(116, 235, 213, 0.3);
 }
 
-/* 分类标题 (胶囊) */
 .komi {
     margin: 0 0 20px 0;
     padding: 8px 25px;
@@ -143,13 +140,11 @@ main {
 }
 
 .card a {
-    text-decoration: none;
     font-size: 18px;
     color: #555;
     font-weight: bold;
 }
 
-/* 列表文字 */
 .card ul {
     list-style: none;
     padding-left: 0;
@@ -162,7 +157,7 @@ main {
     flex-grow: 1;
 }
 
-/* 圆形图片 */
+/* 👇 default.png が存在しない場合でも画像が壊れないように背景色を設定 */
 .card img {
     margin-top: auto; 
     margin-bottom: 25px;
@@ -171,6 +166,7 @@ main {
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    background-color: #f1f1f1;
 }
 
 .card > p:last-child {
@@ -193,23 +189,39 @@ main {
     color: #fff;
 }
 
-/* 返回首页按钮 */
-.step_area {
-    text-align: center;
-    margin: 50px auto 0;
+/* =========================================
+   フッターボタン (不足していた .btn スタイルを追加)
+   ========================================= */
+.Yoyaku_haiti {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
-#home_img {
-    width: 220px;
-    transition: transform 0.3s;
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #fff;
+    color: #ff7e67;
+    border: 2px solid #ff7e67;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 126, 103, 0.1);
 }
 
-#home_img:hover {
-    transform: scale(1.05);
+.btn:hover {
+    background-color: #ff7e67;
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(255, 126, 103, 0.4);
 }
 
 /* =========================================
-   页脚
+   フッター
    ========================================= */
 footer {
     background-color: #6a89cc;
@@ -223,7 +235,6 @@ footer {
 }
 
 footer a {
-    text-decoration: none;
     color: #e0e0e0;
     transition: color 0.3s;
 }
@@ -238,55 +249,52 @@ footer img {
 }
 
 /* =========================================
-   👇 手机端专属优化 (屏幕小于 600px 时生效)
+   スマホ向け専用最適化
    ========================================= */
 @media (max-width: 600px) {
     header {
-        flex-direction: row; /* 强制 Logo 和 菜单在同一行 */
+        flex-direction: row;
         padding: 10px 10px;
         gap: 5px;
     }
 
     header img {
-        height: 30px; /* 手机上 Logo 变小 */
+        height: 30px;
     }
 
     .nav-links {
         display: flex;
-        flex-direction: row; /* 强制横向排列 */
+        flex-direction: row;
         width: auto;
         gap: 10px;
-        margin-right: 0; /* 清除可能存在的边距 */
+        margin-right: 0;
     }
 
     .nav-links a {
-        font-size: 11px; /* 字体缩小 */
-        white-space: nowrap; /* 强制不换行 */
+        font-size: 11px;
+        white-space: nowrap;
     }
 
-    /* 手机上标题缩小 */
     .yoyaku {
         font-size: 22px;
         padding: 10px 20px;
     }
-       #gt_float_wrapper {
+    
+    #gt_float_wrapper {
         bottom: 166px !important;
         left: 7px !important;
         z-index: 999999 !important;
     }
 
-
-    /* 手机上卡片取消固定高度，让它自动适应内容 */
     .card {
         height: auto;
         min-height: 500px;
     }
 
     .card img {
-        margin-top: 20px; /* 手机上不需要推到底部，留点间距就行 */
+        margin-top: 20px;
     }
 
-    /* 页脚变成竖排 */
     footer {
         flex-direction: column;
         gap: 10px;
