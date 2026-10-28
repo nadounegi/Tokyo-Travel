@@ -121,7 +121,7 @@ try {
         <div class="Yoyaku_haiti">
         <a href="list.php" class="btn">おすすめに戻る</a>
         <a href="top.php" class="btn">ホームページに戻る</a>
-    </div>
+        </div>
 
     </main>
   <footer>

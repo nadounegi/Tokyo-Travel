@@ -107,9 +107,10 @@ try {
       <?php endforeach; ?>
     </div>
     
-    <p class="step_area">
-      <a href="index.html"><img src="img/ホームページ　ボタン2.png" height="85" width="250" id="home_img" /></a>
-    </p>
+      <div class="Yoyaku_haiti">
+        <a href="list.php" class="btn">おすすめに戻る</a>
+        <a href="top.php" class="btn">ホームページに戻る</a>
+        </div>
   </main>
 
  <footer>
