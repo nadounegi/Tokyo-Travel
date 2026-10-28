@@ -90,7 +90,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         <div class="Trave"><a href="index.html"><img src="img/logo.png" alt=""></a></div>
     </header>
     <main>
-        <form action="user_login.php" method="POST">
+        <form action="user_login.php" method="POST" autocomplete="off">
 
             <div class="anniu">
                 <p>ログイン/Login</p>
@@ -98,11 +98,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
             <div class="delu">
                 <p>メールアドレス/Mail address <br>
-                    <input type="email" id="Mail" name="txt_email">
+                    <input type="email" id="Mail" name="txt_email" autocomplete="off">
                 </p>
 
                 <p>パスワード/Password <br>
-                   <input type="password" id="Password" name="txt_pass">
+                   <input type="password" id="Password" name="txt_pass" autocomplete="off">
                 </p>
 
             <div class="lginbotan">
