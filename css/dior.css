@@ -1,49 +1,62 @@
+/* --- メインビジュアル（親要素）の設定 --- */
 #mv {
   display: flex;
   position: relative;
-  height: 800px;
+  width: 100%;
+  height: 800px; /* PCでの高さ */
 }
 
-
-/* ボックス内のテキスト */
-
-#mv p {
-  font-size: 50px;
-  color: #fff;
-}
-
-
-/* 各ボックスの共通設定 */
-
+/* --- 左右のボックスの共通設定 --- */
 #mv-left,
 #mv-right {
-  display: flex;/* ボックス内のテキスト配置 */
+  display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
-  height: 800px;
-  position: absolute;
+  width: 50%; /* PCでは左右50%ずつ */
+  height: 100%; /* 親要素の高さに合わせる */
   transition: width 0.2s linear;
-  background-position: center top;
+  background-position: center;
+  background-size: cover;
+  
+  /* ↓↓↓ ここが重要！ absoluteやtop/left/rightは削除する ↓↓↓ */
+  /* position: absolute; */ 
+  /* top: 0; */
+  /* left: 0; */
 }
 
-
-/* 左のボックスの配置、背景画像設定 */
-
+/* --- 左側のボックスの背景画像 --- */
 #mv-left {
-  top: 0;
-  left: 0;
-  background-image: url(../デザイン/詳しく背景.jpg);
-  background-position: left top;
-  background-size: cover;
+  background-image: url(../img/詳しく背景.jpg
+  ); /* 実際のパスに合わせてください */
+  background-position: left center;
 }
 
-/* 右のボックスの配置、背景画像設定 */
-
+/* --- 右側のボックスの背景画像 --- */
 #mv-right {
-  top: 0;
-  right: 0;
-  background-image: url(../デザイン/ログイン背景.jpg);
-  background-position: right top;
-  background-size: cover;
+  background-image: url(../img/ログイン背景.jpg); /* 実際のパスに合わせてください */
+  background-position: right center;
+}
+
+/* --- タブレット・スマホ用のレスポンシブ設定 --- */
+/* 画面幅が 768px 以下の場合のスタイル */
+@media screen and (max-width: 768px) {
+  #mv {
+    /* スマホでは横並びから縦並びに変更する */
+    flex-direction: column;
+    /* 高さは画面いっぱい（100vh）にせず、中身に合わせるか固定値にする */
+    height: auto; 
+  }
+
+  #mv-left,
+  #mv-right {
+    /* スマホでは幅100%、高さを300px程度にする */
+    width: 100%;
+    height: 300px; 
+    transition: none; /* スマホではアニメーション不要 */
+  }
+  
+  /* 文字が折り返さないように少し小さくする */
+  .btn {
+    font-size: 32px;
+  }
 }

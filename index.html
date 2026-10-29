@@ -1,86 +1,74 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8">
+  <!-- スマホ表示のためのビューポート設定（必須） -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="VpnVd8OHtRpgfqk8YcSpy0Gq00pXOavEmP3XQc7mioA" />
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
   <link rel="stylesheet" href="css/dior.css">
   <link rel="stylesheet" href="css/aaaa.css">
-
   <title>Document</title>
-
+</head>
 <body>
+  <!-- 翻訳ウィジェット（1回だけ読み込み） -->
   <div class="gtranslate_wrapper"></div>
   <script>window.gtranslateSettings = { "default_language": "ja", "native_language_names": true, "wrapper_selector": ".gtranslate_wrapper", "flag_style": "3d" }</script>
   <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
   <header>
     <div class="Trave">
       <p><img src="img/logo.png" alt="Tokyo Travel"></p>
     </div>
-
   </header>
 
   <main>
-
-    <p><a href="https://bl6.jp/web/javascript/jquery-mouseover-zoom-tips/" target="_blank"></a></p>
-
-
     <div id="mv">
-
+      <!-- 左側のボックス -->
       <div id="mv-left">
-
-        <button type="button" class="btn"><a href="top.php">詳しくの画面</a></button>
-
+        <a href="top.php" class="btn">詳しくの画面</a>
       </div>
-      _
+      <!-- 右側のボックス -->
       <div id="mv-right">
-        <button type="button" class="btn"><a href="user_login.php">ログイン</a></button>
+        <a href="user_login.php" class="btn">ログイン</a>
       </div>
-
     </div>
-
-
-
-
-
-    <script>
-      const mvLeft = document.getElementById('mv-left');
-      const mvRight = document.getElementById('mv-right');
-
-
-      // マウスオーバー時にサイズを変更する
-
-      mvLeft.addEventListener('mouseover', function () {
-        mvLeft.style.width = '55%';
-        mvRight.style.width = '45%';
-      });
-
-      mvRight.addEventListener('mouseover', function () {
-        mvRight.style.width = '55%';
-        mvLeft.style.width = '45%';
-      });
-
-
-      // マウスが外れた時に元のサイズに戻す
-
-      mvLeft.addEventListener('mouseout', function () {
-        mvLeft.style.width = '50%';
-        mvRight.style.width = '50%';
-      });
-
-      mvRight.addEventListener('mouseout', function () {
-        mvRight.style.width = '50%';
-        mvLeft.style.width = '50%';
-      });
-    </script>
   </main>
+
   <footer>
     <div class="left"><img src="img/logo.png" width="90%" alt=""></div>
-    <div class="right" style="font-size: 30px;"><a href="Otoiawase.html">お問い合わせ</a></div>
   </footer>
+
+  <script>
+    // PC画面のみマウスオーバー時のアニメーションを有効にする
+    const mvLeft = document.getElementById('mv-left');
+    const mvRight = document.getElementById('mv-right');
+
+    mvLeft.addEventListener('mouseenter', () => {
+      // スマホサイズ（768px以下）の時は処理しない
+      if (window.innerWidth > 768) {
+        mvLeft.style.width = '55%';
+        mvRight.style.width = '45%';
+      }
+    });
+    mvLeft.addEventListener('mouseleave', () => {
+      if (window.innerWidth > 768) {
+        mvLeft.style.width = '50%';
+        mvRight.style.width = '50%';
+      }
+    });
+    mvRight.addEventListener('mouseenter', () => {
+      if (window.innerWidth > 768) {
+        mvRight.style.width = '55%';
+        mvLeft.style.width = '45%';
+      }
+    });
+    mvRight.addEventListener('mouseleave', () => {
+      if (window.innerWidth > 768) {
+        mvRight.style.width = '50%';
+        mvLeft.style.width = '50%';
+      }
+    });
+  </script>
 </body>
-<div class="gtranslate_wrapper"></div>
-<script>window.gtranslateSettings = {"default_language":"ja","wrapper_selector":".gtranslate_wrapper","float_switcher_open_direction":"bottom","flag_style":"3d"}</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script></html>
+</html>

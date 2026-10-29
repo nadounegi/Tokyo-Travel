@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* =========================================
-   全局基础
+   共通設定（ベース）
    ========================================= */
 body {
     margin: 0;
@@ -18,7 +18,7 @@ a {
 }
 
 /* =========================================
-   头部导航 (修复了距离)
+   ヘッダー（PC・スマホ共通）
    ========================================= */
 header {
     background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
@@ -39,7 +39,7 @@ header img {
 
 .nav-links {
     display: flex;
-    gap: 40px; /* 合理间距 */
+    gap: 40px;
 }
 
 .nav-links a {
@@ -54,7 +54,7 @@ header img {
 }
 
 /* =========================================
-   主内容区
+   メインコンテンツ
    ========================================= */
 main {
     flex-grow: 1;
@@ -64,7 +64,7 @@ main {
     padding: 40px 20px;
 }
 
-/* 标题美化 */
+/* ページタイトル */
 .page-title {
     background-color: #fff;
     padding: 15px 40px;
@@ -74,10 +74,11 @@ main {
     border-bottom: 4px solid #ff7e67;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     margin-bottom: 50px;
+    text-align: center;
 }
 
 /* =========================================
-   服务卡片网格
+   サービスカードのグリッド
    ========================================= */
 .service-grid {
     display: flex;
@@ -107,7 +108,7 @@ main {
 .service-card img {
     width: 100%;
     height: 120px;
-    object-fit: contain; /* 保持图片比例 */
+    object-fit: contain;
     margin-bottom: 15px;
 }
 
@@ -119,31 +120,42 @@ main {
 }
 
 /* =========================================
-   底部返回按钮
+   下部の戻るボタン
    ========================================= */
-.bottom-buttons {
+.Yoyaku_haiti {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-top: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
 }
 
-.bottom-buttons a {
+.Yoyaku_haiti .btn {
     display: inline-block;
+    text-decoration: none;
+    background-color: #fff;
+    color: #ff7e67;
+    border: 2px solid #ff7e67;
+    padding: 15px 40px;
+    margin-right: 0px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 126, 103, 0.1);
 }
 
-.bottom-buttons img {
-    height: 65px;
-    width: auto;
-    transition: transform 0.3s;
+.btn:hover {
+    background-color: #ff7e67;
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(255, 126, 103, 0.4);
 }
 
-.bottom-buttons img:hover {
-    transform: scale(1.05);
-}
 
 /* =========================================
-   页脚
+   フッター
    ========================================= */
 footer {
     background-color: #6a89cc;
@@ -154,6 +166,11 @@ footer {
     padding: 20px 50px;
     font-weight: bold;
     box-sizing: border-box;
+}
+
+footer .footer-links {
+    display: flex;
+    gap: 20px;
 }
 
 footer a {
@@ -168,4 +185,106 @@ footer a:hover {
 footer img {
     height: 35px;
     filter: brightness(0) invert(1);
+}
+
+
+/* =========================================
+   スマホ・タブレット用のレスポンシブ設定
+   (画面幅 768px 以下の場合)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    /* --- ヘッダーの修正（23区ページと同じデザインにする） --- */
+    header {
+        flex-direction: column; /* 縦並びにする */
+        justify-content: center; /* 中央揃え */
+        padding: 15px 10px; /* 余白を調整 */
+        gap: 10px; /* ロゴとリンクの間隔 */
+    }
+
+    header img {
+        height: 35px; /* ロゴのサイズ */
+    }
+   
+    .logo img {
+    width: 98px;
+    }
+    .nav-links {
+        width: 100%;
+        justify-content: center; /* リンクを中央揃えに */
+        gap: 15px; /* リンク同士の間隔を狭める */
+    }
+
+    .nav-links a {
+        font-size: 13px; /* 文字を小さくして1行に収める */
+        white-space: nowrap; /* 文字が縦に折り返されるのを防ぐ */
+    }
+
+    /* --- その他のスマホ用調整 --- */
+    main {
+        padding: 30px 15px;
+    }
+
+    .page-title {
+        font-size: 22px;
+        padding: 10px 30px;
+        margin-bottom: 30px;
+    }
+
+    .service-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .service-card {
+        width: 100%;
+        max-width: 350px;
+        padding: 20px;
+    }
+.Yoyaku_haiti {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.Yoyaku_haiti .btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #fff;
+    color: #ff7e67;
+    border: 2px solid #ff7e67;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 126, 103, 0.1);
+    
+    /* ▼ 追加：ボタンの長さを揃え、文字を中央にする ▼ */
+    min-width: 240px;      /* 最小幅を指定して2つのボタンの長さを揃える */
+    text-align: center;    /* 中の文字を中央揃えにする */
+    box-sizing: border-box;/* paddingを含めた幅計算にする */
+}
+
+.Yoyaku_haiti .btn:hover {
+    background-color: #ff7e67;
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(255, 126, 103, 0.4);
+}
+
+    /* フッターも中央揃えの縦並びに */
+    footer {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        text-align: center;
+    }
+
+    footer .footer-links {
+        justify-content: center;
+    }
 }
