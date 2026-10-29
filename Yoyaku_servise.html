@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
+    <!-- スマホ表示に必須の設定 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>予約サービス</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
@@ -11,9 +12,10 @@
 
 <body>
   <header>
-      <h1>
+      <!-- ロゴ部分（h1はページタイトルで使うため、ここはdivに変更） -->
+      <div class="logo">
           <a href="index.html"><img src="img/logo.png" alt="東京 Travel" /></a>
-      </h1>
+      </div>
       <div class="nav-links">
           <a href="loginout.php">ログアウト</a>
           <a href="top.php">検索</a>
@@ -24,7 +26,7 @@
   <main>
       <h1 class="page-title">予約サービス</h1>
       
-      <!-- 👇 三个预约卡片的网格容器 -->
+      <!-- 3つの予約カードを並べるグリッドコンテナ -->
       <div class="service-grid">
           <div class="service-card">
               <a href="Taxi_yoyaku.html">
@@ -48,21 +50,24 @@
           </div>
       </div>
 
-      <!-- 👇 底部返回按钮 -->
-      <div class="bottom-buttons">
-          <a href="top.php"><img src="img/トップページ　ボタン.png" alt="トップページに戻る"></a>
-          <a href="index.html"><img src="img/ホームページ　ボタン2.png" alt="ホームページに戻る"></a>
-      </div>
+      <!-- 下部の戻るボタン -->
+     <div class="Yoyaku_haiti">
+        <a href="list.php" class="btn">おすすめに戻る</a>
+        <a href="top.php" class="btn">ホームページに戻る</a>
+    </div>
   </main>
 
   <footer>
-    <p><a href="top.html"><img src="img/logo.png" alt="東京 Travel" /></a></p>
-    <a href="jyoho_add.php" id="add">場所管理</a>
-    <a href="area_add.php">区管理</a>
+    <p class="footer-logo"><a href="top.html"><img src="img/logo.png" alt="東京 Travel" /></a></p>
+    <div class="footer-links">
+      <a href="jyoho_add.php" id="add">場所管理</a>
+      <a href="area_add.php">区管理</a>
+    </div>
   </footer>
+
+  <!-- 翻訳ウィジェットのスクリプトはbody内の最後に配置 -->
+  <div class="gtranslate_wrapper"></div>
+  <script>window.gtranslateSettings = {"default_language":"ja","wrapper_selector":".gtranslate_wrapper","float_switcher_open_direction":"bottom","flag_style":"3d"}</script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 </body>
-<div class="gtranslate_wrapper"></div>
-<script>window.gtranslateSettings = {"default_language":"ja","wrapper_selector":".gtranslate_wrapper","float_switcher_open_direction":"bottom","flag_style":"3d"}</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-</html>
-    
+    </html>

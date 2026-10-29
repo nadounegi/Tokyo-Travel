@@ -135,18 +135,35 @@ main {
 /* =========================================
    底部按钮
    ========================================= */
-.bottom-button {
-    text-align: center;
+.Yoyaku_haiti {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
 }
 
-.bottom-button img {
-    height: 70px;
-    width: auto;
-    transition: transform 0.3s;
+.Yoyaku_haiti .btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #fff;
+    color: #ff7e67;
+    border: 2px solid #ff7e67;
+    padding: 15px 40px;
+    margin-right: 0px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 126, 103, 0.1);
 }
 
-.bottom-button img:hover {
-    transform: scale(1.05);
+.btn:hover {
+    background-color: #ff7e67;
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(255, 126, 103, 0.4);
 }
 
 /* =========================================
@@ -215,6 +232,40 @@ footer img {
     .service-image img {
         max-width: 100%;
     }
+.Yoyaku_haiti {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.Yoyaku_haiti .btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #fff;
+    color: #ff7e67;
+    border: 2px solid #ff7e67;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 126, 103, 0.1);
+    
+    /* ▼ 追加：ボタンの長さを揃え、文字を中央にする ▼ */
+    min-width: 240px;      /* 最小幅を指定して2つのボタンの長さを揃える */
+    text-align: center;    /* 中の文字を中央揃えにする */
+    box-sizing: border-box;/* paddingを含めた幅計算にする */
+}
+
+.Yoyaku_haiti .btn:hover {
+    background-color: #ff7e67;
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(255, 126, 103, 0.4);
+}
 
     footer {
         flex-direction: column;
