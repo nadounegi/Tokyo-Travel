@@ -161,20 +161,32 @@ form {
     justify-content: center;
     gap: 30px;
     margin-top: 50px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
 }
 
-.motoru img {
-    height: 60px; /* 把以前 500px 的巨无霸图片缩小 */
-    transition: transform 0.3s;
+.motoru .btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #fff;
+    color: #ff7e67;
+    border: 2px solid #ff7e67;
+    padding: 15px 40px;
+    margin-right: 0px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 126, 103, 0.1);
 }
 
-.motoru img:hover {
-    transform: scale(1.1);
+.btn:hover {
+    background-color: #ff7e67;
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(255, 126, 103, 0.4);
 }
 
-.motoru p {
-    margin: 0;
-}
 
 /* =========================================
    页脚

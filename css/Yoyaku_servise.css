@@ -158,7 +158,7 @@ main {
    フッター
    ========================================= */
 footer {
-    background-color: #6a89cc;
+   background-color: #6a89cc;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -166,11 +166,6 @@ footer {
     padding: 20px 50px;
     font-weight: bold;
     box-sizing: border-box;
-}
-
-footer .footer-links {
-    display: flex;
-    gap: 20px;
 }
 
 footer a {
