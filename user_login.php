@@ -116,7 +116,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         
          <!-- 下部の戻るボタン -->
      <div class="motoru">
-        <a href="top.php" class="btn">ホームページに戻る</a>
+        <a href="index.html" class="btn">ホームページに戻る</a>
     </div>
     </main>
     <footer>
