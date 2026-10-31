@@ -96,10 +96,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="submit" name="submit" value="会員登録する" id="toroku">
             </div>
         </form>
-        <div class="motoru">
-            <p><a href="top.php"><img src="デザイン/トップページ　ボタン.jpg" alt=""></a></p>
-            <p><a href="index.html"><img src="img/ホームページ　ボタン2.png" alt=""></a></p>
-        </div>
+          <!-- 下部の戻るボタン -->
+       <div class="motoru">
+        <a href="top.php" class="btn">ホームページに戻る</a>
+       </div>
     </main>
     <footer>
         <div class="left">東京<img src="/デザイン/グループ 6.jpg" alt="">Travel</div>

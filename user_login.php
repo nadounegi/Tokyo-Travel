@@ -114,10 +114,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             </div>
         </form>
         
-        <div class="motoru">
-            <p><a href="top.php"><img src="デザイン/トップページ　ボタン.jpg" alt=""></a></p>
-            <p><a href="index.html"><img src="img/ホームページ　ボタン2.png" alt=""></a></p>
-        </div>
+         <!-- 下部の戻るボタン -->
+     <div class="motoru">
+        <a href="top.php" class="btn">ホームページに戻る</a>
+    </div>
     </main>
     <footer>
         <p><a href="index.html"><img src="img/logo.png" alt="東京 Travel" /></a></p>

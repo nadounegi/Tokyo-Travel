@@ -59,13 +59,17 @@ main h1{
     text-align: center; 
 }
 /*フッター*/
-footer{
-    background-color:#ccc;
-    display: flex;/* 横並び */
-    justify-content: space-between;/* flexの左右の配置方法 */
-    align-items: center;/* flexの上下の配置位置 */
-    padding-right: 50px;
+footer {
+   background-color: #6a89cc;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    font-weight: bold;
+    box-sizing: border-box;
 }
+
 footer a{
 text-decoration: none;
 color: #000000;
